@@ -1,0 +1,65 @@
+.homeImage {
+  height: 200px;
+  width: 600px;
+}
+.colDetails {
+  display: flex;
+  justify-content: flex-start;
+  /* height: 250px; */
+  width: 100%;
+}
+.container {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+}
+.priceAndTitlerow {
+  display: flex;
+  align-content: center;
+}
+.titleHome {
+  font-size: 22px;
+  font-weight: 500;
+  color: #858585;
+}
+.priceHome {
+  font-size: 22px;
+  color: #72bcae;
+  font-weight: 700;
+}
+.place {
+  color: #717171;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.bedroomS {
+  font-size: 12px;
+  color: #a6a6a6;
+  margin-top: -7px;
+}
+.btnRent {
+  background-color: #e6f6f3;
+  border-radius: 10%;
+  color: #72bcae;
+}
+.btnDetails {
+  background-color: #fff3f2;
+  border-radius: 10%;
+  color: #fe9387;
+  margin-left: 10px;
+}
+.btnDetails:hover {
+  color: #c44e41;
+}
+.btnRent:hover {
+  color: #448075;
+}
+.btn-area {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  justify-content: flex-start;
+  margin-top: 15px;
+}
