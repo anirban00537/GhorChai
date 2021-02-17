@@ -1,23 +1,24 @@
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div className="navbar">
+    <nav className="navbar fixed-top">
       <div className="nav justify-content-start brandname">GHORCHAI</div>
       <ul className="nav justify-content-center">
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <Link className="nav-link" to="/">
             Home
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
-            Give Rent
-          </a>
+          <Link className="nav-link" to="/">
+            Search
+          </Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">
+          <Link className="nav-link" to="/dashboard">
             Dashboard
-          </a>
+          </Link>
         </li>
       </ul>
       <div className="nav justify-content-end">
@@ -28,7 +29,7 @@ const Navbar = () => {
           alt="..."
         ></img>
       </div>
-    </div>
+    </nav>
   );
 };
 

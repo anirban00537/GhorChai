@@ -1,0 +1,19 @@
+.UserDashboard {
+  margin-top: 100px;
+}
+.mb-3,
+.my-3 {
+  /* margin-bottom: 1rem!important; */
+}
+.mainSearchfield {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.SearchRent {
+  background-color: #72bcae !important;
+  color: white;
+}
+.SearchRent:hover {
+  color: rgb(187, 187, 187);
+}
