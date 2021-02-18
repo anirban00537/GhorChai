@@ -19,18 +19,18 @@
   align-content: center;
 }
 .titleHome {
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 500;
   color: #858585;
 }
 .priceHome {
   font-size: 22px;
   color: #72bcae;
-  font-weight: 700;
+  font-weight: bold;
 }
 .place {
   color: #717171;
-  font-weight: bold;
+  font-weight: 500;
   margin-top: 10px;
 }
 .bedroomS {
@@ -69,4 +69,7 @@
   justify-content: center;
   margin-top: 80px;
   margin-bottom: 30px;
+}
+.resultSearch {
+  font-size: 12px;
 }

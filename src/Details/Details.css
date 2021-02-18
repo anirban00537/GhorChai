@@ -1,0 +1,42 @@
+.imgContainer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: center;
+  margin-top: 50px;
+}
+.item {
+  min-height: 140px;
+  min-width: 200px;
+  margin-bottom: 21px;
+}
+.DetailsContainer {
+  margin-top: 50px;
+}
+.details {
+  color: #72bcae;
+  font-weight: 700;
+}
+.title {
+  color: #858585;
+}
+.address {
+  color: #858585;
+  font-weight: 300;
+}
+.bedbath {
+  font-size: 19px;
+  color: #72bcae;
+  font-weight: 600;
+}
+.totalDetais {
+  font-size: 16px;
+  color: #adadad;
+  font-weight: 500;
+}
+.btnRent {
+  background-color: #e6f6f3;
+  border-radius: 10%;
+  color: #72bcae;
+  margin-bottom: 10px;
+}

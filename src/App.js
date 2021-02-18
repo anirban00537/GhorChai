@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
+import Details from "./Details/Details";
 import Home from "./Home/Home";
-import UserDashboard from "./UserDashboard/UserDashboard";
+import Search from "./Search/Search";
+import Dashboard from "./UserDashboard/Dashboard";
 
 function HomeRent() {
   return (
@@ -16,7 +18,9 @@ function Routers() {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path="/dashboard" component={UserDashboard} />
+      <Route exact path="/search" component={Search} />
+      <Route exact path="/details" component={Details} />
+      <Route exact path="/dashboard" component={Dashboard} />
     </Switch>
   );
 }

@@ -11,7 +11,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/">
+          <Link className="nav-link" to="/search">
             Search
           </Link>
         </li>
@@ -21,7 +21,7 @@ const Navbar = () => {
           </Link>
         </li>
       </ul>
-      <div className="nav justify-content-end">
+      <div className="nav username justify-content-end">
         Anirban Roy
         <img
           src="https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/original.jpeg"

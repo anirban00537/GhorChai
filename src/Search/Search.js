@@ -1,7 +1,8 @@
+import Homeitem from "../Home/Homeitem/Homeitem";
 import Navbar from "../Navbar/Navbar";
-import "./UserDashboard.css";
+import "./Search.css";
 
-const UserDashboard = () => {
+const Search = () => {
   return (
     <>
       <Navbar />
@@ -15,12 +16,22 @@ const UserDashboard = () => {
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-default"
             />
-            <button className=" btn SearchRent ">Search</button>
+            <button className=" btn SearchRent resultSearch">Search</button>
           </div>
+        </div>
+        <div className="row ">
+          <p className="mainSearchfield resultSearch">
+            <b>22 </b> results found
+          </p>
+        </div>
+        <div className="">
+          <Homeitem />
+          <Homeitem />
+          <Homeitem />
         </div>
       </div>
     </>
   );
 };
 
-export default UserDashboard;
+export default Search;

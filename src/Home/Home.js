@@ -1,4 +1,4 @@
-import HomeHouses from "../HomeHouses/HomeHouses";
+import HomeHouses from "./HomeHouses/HomeHouses";
 import Navbar from "../Navbar/Navbar";
 
 const Home = () => {
