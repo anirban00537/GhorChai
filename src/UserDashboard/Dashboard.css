@@ -1,0 +1,60 @@
+.imageDp {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+.containerDash {
+  margin-top: 80px;
+  margin-left: 80px;
+  width: 93%;
+}
+.DetSec {
+  display: flex;
+  justify-content: center;
+}
+.titleColor {
+  color: #72bcae;
+}
+.homeImagerent {
+  width: 100%;
+  height: 130px;
+  margin-right: 8px;
+}
+.CurrentRent {
+  color: #72bcae;
+  font-weight: 700;
+}
+
+.titleRen {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  color: #858585;
+}
+.imgRent {
+  display: flex;
+  justify-self: center;
+}
+.addressRent {
+  font-size: 13px;
+  color: #a6a6a6;
+}
+.complainRentHouse {
+  width: 60%;
+  margin-top: 16px;
+}
+.personChat {
+  color: #72bcae;
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+}
+.chatComplainmain {
+  margin-bottom: 13px;
+}
+.dpInfo {
+  height: 100%;
+}
+.mes {
+  color: #a6a6a6;
+}

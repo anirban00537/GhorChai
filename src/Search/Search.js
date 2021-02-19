@@ -4,7 +4,7 @@ import "./Search.css";
 
 const Search = () => {
   return (
-    <>
+    <div className="containerSearch">
       <Navbar />
 
       <div className="UserDashboard">
@@ -30,7 +30,7 @@ const Search = () => {
           <Homeitem />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

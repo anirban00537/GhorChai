@@ -17,3 +17,6 @@
 .SearchRent:hover {
   color: rgb(187, 187, 187);
 }
+.containerSearch {
+  width: 95%;
+}
