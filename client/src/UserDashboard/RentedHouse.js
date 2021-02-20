@@ -2,7 +2,7 @@ import "./Dashboard.css";
 const RentedHouse = () => {
   return (
     <div>
-      <div className="row container">
+      <div className="row containerRent">
         <div className="col-4">
           <div className="row imgRent">
             <img
