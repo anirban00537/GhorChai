@@ -5,7 +5,9 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <HomeHouses />
+      <div className="mainfileHome">
+        <HomeHouses />
+      </div>
     </div>
   );
 };

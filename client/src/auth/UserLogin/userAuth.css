@@ -1,0 +1,34 @@
+.userLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0px;
+}
+.greenClrBtn {
+  background-color: #72bcae;
+  color: #fff;
+}
+.colorBack {
+  height: 100vh;
+  width: 100vh;
+  display: flex;
+  align-items: center;
+}
+.loginimage {
+  width: 540px;
+}
+.LoginNameTitle {
+  font-size: 44px;
+  color: #858585;
+}
+.loginName {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-variant-caps: all-petite-caps;
+}
+.formLog {
+  padding: 170px;
+}

@@ -2,7 +2,7 @@ import "./HomeHouses.css";
 
 const Homeitem = () => {
   return (
-    <div className="mainfile">
+    <div className="mainfile ">
       <div className="row col-9">
         <div className="col-5 homeImage ">
           <img
@@ -24,8 +24,7 @@ const Homeitem = () => {
             <div className="row">
               <p className="col-12 bedroomS">5 BEDROOM</p>
             </div>
-            <div className="row btn-area col-6">
-              <button className=" btn btnRent btn-">Rent now</button>
+            <div className="row btn-area col-12">
               <button className="btnDetails btn btn-">Details</button>
             </div>
           </div>

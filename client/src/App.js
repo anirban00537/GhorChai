@@ -1,18 +1,15 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.css";
+import Login from "./auth/UserLogin/Login";
+import OwnerLogin from "./auth/OwnerLogin/Login";
 import Details from "./Details/Details";
 import Home from "./Home/Home";
 import Search from "./Search/Search";
 import Dashboard from "./UserDashboard/Dashboard";
-
-function HomeRent() {
-  return (
-    <div className="App">
-      <Home />
-    </div>
-  );
-}
+import AuthDashboard from "./auth/AuthDashboard";
+import UserSignup from "./auth/UserLogin/Signup";
+import OwnerSignup from "./auth/OwnerLogin/Signup";
 
 function Routers() {
   return (
@@ -21,6 +18,11 @@ function Routers() {
       <Route exact path="/search" component={Search} />
       <Route exact path="/details" component={Details} />
       <Route exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/userlogin" component={Login} />
+      <Route exact path="/ownerlogin" component={OwnerLogin} />
+      <Route exact path="/usersignup" component={UserSignup} />
+      <Route exact path="/ownersignup" component={OwnerSignup} />
+      <Route exact path="/auth" component={AuthDashboard} />
     </Switch>
   );
 }

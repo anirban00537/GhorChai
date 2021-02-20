@@ -72,7 +72,7 @@ const Dashboard = () => {
           <div className="col-7">
             <RentedHouse />
             <div className="row complainRentHouse">
-              <h6 className="titleColor">Report a complain to owner</h6>
+              <h6 className="titleColorReport">Report a complain to owner</h6>
             </div>
             <div className="row ">
               <div class="input-group mb-3 col-10">

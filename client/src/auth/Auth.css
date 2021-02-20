@@ -1,0 +1,41 @@
+a {
+  text-decoration: none;
+}
+
+.authimage {
+  height: 220px;
+  width: 390px;
+}
+.mainSectionAuth {
+  display: flex;
+}
+.firstSection {
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+.secondSection {
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.rent {
+  background-color: #e6f6f3;
+  color: #72bcae;
+  width: 220px;
+  margin: 13px;
+  text-decoration: none;
+}
+.owner {
+  background-color: #72bcae;
+  color: white;
+  width: 220px;
+  margin: 13px;
+  text-decoration: none;
+}

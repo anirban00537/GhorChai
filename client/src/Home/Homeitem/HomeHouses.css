@@ -44,10 +44,10 @@
   color: #72bcae;
 }
 .btnDetails {
-  background-color: #fff3f2;
+  background-color: #e6f6f3;
   border-radius: 10%;
-  color: #fe9387;
-  margin-left: 10px;
+  color: #72bcae;
+  /* margin-left: 10px; */
 }
 .btnDetails:hover {
   color: #c44e41;
@@ -67,8 +67,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 80px;
   margin-bottom: 30px;
+}
+.mainfileHome {
+  margin-top: 80px;
 }
 .resultSearch {
   font-size: 12px;
