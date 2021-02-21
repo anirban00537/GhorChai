@@ -96,8 +96,21 @@ router.post("/signin", (req, res) => {
         if (doMatch) {
           // res.json({ message: "successfuly signedin" });
           const token = jwt.sign({ _id: savedUser._id }, JWT_SECRET);
-          const { name, _id, email } = savedUser;
-          res.json({ token: token, user: { _id, name, email } });
+          const {
+            name,
+            _id,
+            email,
+            role,
+            address,
+            nid,
+            phone,
+            sex,
+          } = savedUser;
+
+          res.json({
+            token: token,
+            user: { _id, name, email, role, address, nid, phone, sex },
+          });
         } else {
           return res.status(422).json({ error: "invalid email and password" });
         }
