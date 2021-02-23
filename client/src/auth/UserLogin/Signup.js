@@ -1,7 +1,6 @@
 import "./userAuth.css";
 import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
-import { signinAction } from "../../features/actions/user";
 import { useDispatch } from "react-redux";
 import { signup } from "../../api/user";
 const Signup = () => {

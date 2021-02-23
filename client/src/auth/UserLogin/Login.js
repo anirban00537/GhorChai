@@ -20,7 +20,9 @@ const Login = () => {
     localStorage.setItem("jwt", tdata.data.token);
     localStorage.setItem("user", tdata.data.user._id);
     localStorage.setItem("role", tdata.data.user.role);
-    dispatch(signinAction(tdata.data.user));
+    dispatch(
+      signinAction(tdata.data.user._id, tdata.data.token, tdata.data.user.role)
+    );
     history.push("/");
   };
   return (

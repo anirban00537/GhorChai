@@ -1,17 +1,38 @@
 import "./ownerAuth.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useState } from "react";
 
+import { useDispatch } from "react-redux";
+import { signup } from "../../api/user";
 const Signup = () => {
+  const [auth, setAuth] = useState({
+    email: "",
+    password: "",
+    name: "",
+    role: "owner",
+    address: "",
+    nid: "",
+    phone: "",
+    sex: "Male",
+  });
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const handelSubmit = async (e) => {
+    e.preventDefault();
+    console.log(auth);
+    await signup(auth);
+    history.push("/ownerlogin");
+  };
   return (
     <div className="row userLogin">
       <div className="col-5 colorBack">
         <img src="./image/owner.png" className="ownerAuth" />
       </div>
       <div className="col-7 formLog ">
-        <form>
+        <form onSubmit={handelSubmit}>
           <div className="loginName">
             <label htmlFor="exampleInputEmail1" className="LoginNameTitle">
-              OWner Signup
+              Owner Signup
             </label>
           </div>
           <div className="form-group">
@@ -22,16 +43,24 @@ const Signup = () => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Enter email"
+              value={auth.email}
+              onChange={(e) => {
+                setAuth({ ...auth, email: e.target.value });
+              }}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleInputEmail1">Name</label>
+            <label htmlFor="exampleInputname">Name</label>
             <input
               type="text"
               className="form-control"
-              id="exampleInputEmail1"
+              id="exampleInputname"
               aria-describedby="emailHelp"
               placeholder="Enter Name"
+              value={auth.name}
+              onChange={(e) => {
+                setAuth({ ...auth, name: e.target.value });
+              }}
             />
           </div>
 
@@ -41,6 +70,10 @@ const Signup = () => {
               class="form-control"
               type="text"
               placeholder="Address"
+              value={auth.address}
+              onChange={(e) => {
+                setAuth({ ...auth, address: e.target.value });
+              }}
             ></input>
           </div>
           <div className="form-group">
@@ -49,6 +82,10 @@ const Signup = () => {
               class="form-control"
               type="text"
               placeholder="Enter your NID number"
+              value={auth.nid}
+              onChange={(e) => {
+                setAuth({ ...auth, nid: e.target.value });
+              }}
             ></input>
           </div>
           <div className="form-group">
@@ -57,12 +94,23 @@ const Signup = () => {
               class="form-control"
               type="text"
               placeholder="Enter your phone number"
+              value={auth.phone}
+              onChange={(e) => {
+                setAuth({ ...auth, phone: e.target.value });
+              }}
             ></input>
           </div>
 
           <div class="form-group">
             <label for="exampleFormControlSelect1">Sex</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select
+              class="form-control"
+              id="exampleFormControlSelect1"
+              value={auth.sex}
+              onChange={(e) => {
+                setAuth({ ...auth, sex: e.target.value });
+              }}
+            >
               <option>Male</option>
               <option>Female</option>
             </select>
@@ -74,6 +122,10 @@ const Signup = () => {
               className="form-control"
               id="exampleInputPassword1"
               placeholder="Password"
+              value={auth.password}
+              onChange={(e) => {
+                setAuth({ ...auth, password: e.target.value });
+              }}
             />
           </div>
 

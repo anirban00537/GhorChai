@@ -1,0 +1,54 @@
+.mainHomeOWner {
+  margin-top: 80px;
+}
+.imageOwnerrow {
+  width: 100%;
+}
+.imageOwner {
+  width: 300px;
+  height: 200px;
+  margin: 5px;
+}
+.houseListtitle {
+}
+.slideLeftSide {
+  display: flex;
+  flex: 0.4;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.detailsRightSide {
+  display: flex;
+  flex: 0.6;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.detailsRightSide > h6 {
+  font-weight: 500;
+  margin-left: 7px;
+  margin-right: 120px;
+  color: #858585;
+  font-size: 16px;
+  text-align: left;
+  /* margin: 91px; */
+}
+.priceOWner {
+  display: flex;
+  color: #72bcae;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+.roomPriceOWner {
+  width: 100%;
+}
+.graySec > p,
+h6,
+h5 {
+  color: #b8b8b8;
+  margin-left: 5px;
+  padding-right: 20px;
+}
+.detailsHome {
+  font-size: 11px;
+}
