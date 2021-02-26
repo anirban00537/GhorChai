@@ -1,69 +1,42 @@
-.mainHomeOWner {
-  margin: 80px 70px 70px 70px;
-}
-.imageOwnerrow {
-  width: 100%;
-}
-.imageOwner {
-  width: 100%;
-
-  margin: 5px;
-}
-.houseListtitle {
-}
-.slideLeftSide {
+.imgContainer {
   display: flex;
-  flex: 0.4;
-  justify-content: flex-start;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: center;
+  margin-top: 50px;
 }
-.detailsRightSide {
-  display: flex;
-  flex: 0.6;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
+.item {
+  min-height: 140px;
+  min-width: 200px;
+  margin-bottom: 21px;
 }
-.detailsRightSide > h6 {
-  font-weight: 500;
-  margin-left: 7px;
-  margin-right: 120px;
-  color: #858585;
-  font-size: 16px;
-  text-align: left;
-  /* margin: 91px; */
+.DetailsContainer {
+  margin-top: 50px;
 }
-.priceOWner {
-  display: flex;
+.details {
   color: #72bcae;
-  margin-left: 7px;
-  margin-right: 7px;
+  font-weight: 700;
 }
-.roomPriceOWner {
-  width: 100%;
+.title {
+  color: #858585;
 }
-.graySec > p,
-h6,
-h5 {
-  color: #b8b8b8;
-  margin-left: 5px;
-  padding-right: 20px;
+.address {
+  color: #858585;
+  font-weight: 300;
 }
-.detailsHome {
-  font-size: 11px;
+.bedbath {
+  font-size: 19px;
+  color: #72bcae;
+  font-weight: 600;
 }
-.btnOwner {
-  width: 430px;
-  margin-left: 3px;
-  margin-bottom: 30px;
+.totalDetais {
+  font-size: 16px;
+  color: #adadad;
+  font-weight: 500;
 }
-.editBtnAdmin {
-  color: #fff;
-  background-color: #72bcae;
-  margin: 2px;
-}
-.deleteBtnAdmin {
-  color: #fff;
-  background-color: #72bcae;
-  margin: 2px;
+.btnRent {
+  background-color: #e6f6f3;
+  border-radius: 10%;
+  color: #72bcae;
+  margin-bottom: 10px;
 }

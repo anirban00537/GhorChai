@@ -1,17 +1,18 @@
 import "./HomeCreate.css";
 import FileBase from "react-file-base64";
-import HomeItemDashboard from "./HomeItemDashboard";
 import { useEffect, useState } from "react";
 import { postHome } from "../../api/home";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { HomeAction } from "../../features/actions/Home";
 const HomeCreate = () => {
   const [img, setImg] = useState([]);
+  const dispatch = useDispatch();
+  const homeData = useSelector((state) => state.home);
   const { user } = useSelector((state) => state.user);
   const [home, setHome] = useState({
     title: "",
     description: "",
     address: "",
-    photo: [],
     price: 0,
     area: "",
     nid: "",
@@ -20,24 +21,31 @@ const HomeCreate = () => {
   });
 
   useEffect(() => {
-    console.log(img);
-    setHome({ ...home, photo: img });
     setHome({ ...home, homeOwner: user });
-  }, [img]);
+    dispatch(HomeAction(user));
+  }, []);
   const handelSubmit = async (e) => {
     e.preventDefault();
-
-    console.log(home);
-    const data = await postHome(home).then(() => {
-      alert("done");
+    await postHome(home, img);
+    setHome({
+      title: "",
+      description: "",
+      address: "",
+      price: 0,
+      area: "",
+      nid: "",
+      phone: "",
+      homeOwner: "",
     });
+    dispatch(HomeAction(user));
   };
+
   return (
     <div className="mainOwnerHomeCreate">
       <div className="leftOwner">
         <form onSubmit={handelSubmit}>
           <div className="loginName">
-            <label htmlFor="exampleInputEmail1" className="LoginNameTitle">
+            <label htmlFor="exampleInputEmail1" className="NameTitledash">
               Add A home
             </label>
           </div>
@@ -156,7 +164,21 @@ const HomeCreate = () => {
         </form>
       </div>
       <div className="rightOwner">
-        <HomeItemDashboard />
+        {homeData.map((m) => (
+          <div className="submittedHome">
+            <div className="photoSectionDash">
+              {/* {m.photo.map((im) => (
+                <img className="innerImg" src={im} />
+              ))} */}
+              <img className="innerImg" src={m.photo[0]} />
+            </div>
+            <div className="titleDemoLittle">{m.title}</div>
+            <div className="btn_cover">
+              <button className="btn btn_del btn-sm">Delete</button>
+              <button className="btn btn_del btn-sm">Details</button>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

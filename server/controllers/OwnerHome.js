@@ -1,16 +1,41 @@
 const HomeModel = require("../models/HouseModel.js");
 
 exports.getOwnerHome = getOwnerHome = async (req, res) => {
-  const info = req.body;
-  const homeResult = HomeModel.find({ homeOwner: info });
-  res.json(homeResult);
+  const { id } = req.params;
+  const home = await HomeModel.find({ homeOwner: id });
+  console.log(home);
+  res.json(home);
+  // console.log(data);
 };
 
 exports.postOwnerHome = postOwnerHome = async (req, res) => {
   try {
-    const ownerData = req.body;
-    const newHouseCreate = new HomeModel(ownerData);
+    const { home, photo } = req.body;
+    const {
+      title,
+      description,
+      address,
+      price,
+      area,
+      nid,
+      phone,
+      homeOwner,
+    } = home;
+    console.log(photo);
+    const newHouseCreate = new HomeModel({
+      title: title,
+      description: description,
+      address: address,
+      price: price,
+      area: area,
+      nid: nid,
+      phone: phone,
+      homeOwner: homeOwner,
+      photo: photo,
+    });
+
     newHouseCreate.save();
+
     res.status(201).json({ data: "New house has successfully been created" });
     console.log("created home");
   } catch (error) {
