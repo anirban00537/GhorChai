@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import { postHome } from "../../api/home";
 import { useSelector, useDispatch } from "react-redux";
 import { HomeAction } from "../../features/actions/Home";
+import { Link, useHistory } from "react-router-dom";
 const HomeCreate = () => {
   const [img, setImg] = useState([]);
   const dispatch = useDispatch();
+  const history = useHistory();
   const homeData = useSelector((state) => state.home);
   const { user } = useSelector((state) => state.user);
   const [home, setHome] = useState({
@@ -24,6 +26,12 @@ const HomeCreate = () => {
     setHome({ ...home, homeOwner: user });
     dispatch(HomeAction(user));
   }, []);
+  const toDetails = (data) => {
+    history.push({
+      pathname: "/details",
+      state: { data: data },
+    });
+  };
   const handelSubmit = async (e) => {
     e.preventDefault();
     await postHome(home, img);
@@ -172,10 +180,20 @@ const HomeCreate = () => {
               ))} */}
               <img className="innerImg" src={m.photo[0]} />
             </div>
-            <div className="titleDemoLittle">{m.title}</div>
+            <div className="titleDemoLittle">
+              <p>{m.title}</p>
+            </div>
             <div className="btn_cover">
               <button className="btn btn_del btn-sm">Delete</button>
-              <button className="btn btn_del btn-sm">Details</button>
+
+              <button
+                className="btn btn_del btn-sm"
+                onClick={() => {
+                  toDetails(m);
+                }}
+              >
+                Details
+              </button>
             </div>
           </div>
         ))}
