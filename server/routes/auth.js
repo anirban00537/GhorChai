@@ -1,21 +1,14 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-// const { JWT_SECRET } = require("../keys.js");
 const User = require("../models/users.js");
-//app config
 const JWT_SECRET = "abjflhbasldfbajlhdbffvfkjasnfdkjanfdkjnsa";
 
 const router = express.Router();
-// const User = mongoose.model("User");
-//middleware
-// const requireLogin = require("../middleware/requireMiddleware.js";
 
-//signup route
 router.post("/signup", (req, res) => {
   const { name, email, password, role, address, nid, phone, sex } = req.body;
 
-  // console.log(`name is: ${name} \nemail:${email} `);
   if (
     !email ||
     !name ||
@@ -29,18 +22,15 @@ router.post("/signup", (req, res) => {
     return res.status(422).json({ error: "Please add all the fields" });
   }
 
-  //finding is there any existing user with this email
   User.findOne({ email: email })
     .then((userExist) => {
-      //condition if user exist then show an error
       if (userExist) {
         return res
           .status(422)
           .json({ error: "user with that name already exist" });
       }
-      //encrypting password
+
       bcrypt.hash(password, 12).then((hashedpassword) => {
-        //if user dont exist then put the user in the model and save
         const user = new User({
           email: email,
           name: name,
@@ -52,11 +42,9 @@ router.post("/signup", (req, res) => {
           sex: sex,
         });
 
-        //saving user
         user
           .save()
           .then((user) => {
-            //callback function after saving an user
             res.json({ message: "saved successfuly" });
           })
           .catch((err) => {

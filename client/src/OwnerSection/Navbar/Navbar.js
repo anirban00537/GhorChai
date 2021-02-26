@@ -6,12 +6,12 @@ const Navbar = () => {
       <div className="nav justify-content-start brandname">GHORCHAI</div>
       <ul className="nav justify-content-center">
         <li className="nav-item">
-          <Link className="nav-link" to="/ownerdashboard">
+          <Link className="nav-link" to="/">
             Owner Dashboard
           </Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/search">
+          <Link className="nav-link" to="/complain">
             Complains
           </Link>
         </li>

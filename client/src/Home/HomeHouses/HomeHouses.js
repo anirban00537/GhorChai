@@ -2,7 +2,7 @@ import Homeitem from "../Homeitem/Homeitem";
 
 const HomeHouses = () => {
   return (
-    <div>
+    <div className="">
       <Homeitem />
       <Homeitem />
       <Homeitem />

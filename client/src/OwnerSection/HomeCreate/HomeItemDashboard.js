@@ -86,9 +86,9 @@ const HomeItemDashboard = () => {
               publishing
             </p>
           </div>
-          <div className="row">
-            <button className="btn col-6">Edit</button>
-            <button className="btn col-6">Delete</button>
+          <div className="row btnOwner">
+            <button className="btn col-2 editBtnAdmin">Edit</button>
+            <button className="btn col-2 deleteBtnAdmin">Delete</button>
           </div>
         </div>
       </div>

@@ -1,12 +1,12 @@
 .mainHomeOWner {
-  margin-top: 80px;
+  margin: 80px 70px 70px 70px;
 }
 .imageOwnerrow {
   width: 100%;
 }
 .imageOwner {
-  width: 300px;
-  height: 200px;
+  width: 100%;
+
   margin: 5px;
 }
 .houseListtitle {
@@ -51,4 +51,19 @@ h5 {
 }
 .detailsHome {
   font-size: 11px;
+}
+.btnOwner {
+  width: 430px;
+  margin-left: 3px;
+  margin-bottom: 30px;
+}
+.editBtnAdmin {
+  color: #fff;
+  background-color: #72bcae;
+  margin: 2px;
+}
+.deleteBtnAdmin {
+  color: #fff;
+  background-color: #72bcae;
+  margin: 2px;
 }

@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
 const auth = require("./routes/auth.js");
-
+const OwnerHome = require("./routes/ownerHome.js");
 const app = express();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -24,6 +24,7 @@ mongoose
   .then(() => {
     console.log("DB Connected Successfully");
     app.use("/", auth);
+    app.use("/createhome", OwnerHome);
   })
   .catch((error) => {
     console.log(error.message);
