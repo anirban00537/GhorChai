@@ -9,4 +9,5 @@ export const postHome = (home, img) => {
 
 export const getHome = (id) => axios.get(`${url}` + "createhome/" + `${id}`);
 
+export const getUserHome = () => axios.get(url + "user/gethome");
 // export const deletePortfolio = (id) => axios.delete(`${Portfoliourl}/${id}`);

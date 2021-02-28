@@ -25,9 +25,14 @@
   align-content: center;
 }
 .titleHome {
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 500;
   color: #858585;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  width: 30em;
 }
 .priceHome {
   font-size: 22px;
@@ -38,6 +43,11 @@
   color: #717171;
   font-weight: bold;
   margin-top: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  width: 30em;
 }
 .bedroomS {
   font-size: 12px;

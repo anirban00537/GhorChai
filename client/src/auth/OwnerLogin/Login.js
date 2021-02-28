@@ -22,7 +22,7 @@ const Login = () => {
     dispatch(
       signinAction(tdata.data.user._id, tdata.data.token, tdata.data.user.role)
     );
-    history.push("/ownerdashboard");
+    history.push("/");
   };
   return (
     <div className="row userLogin">

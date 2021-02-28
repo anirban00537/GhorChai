@@ -5,6 +5,7 @@ const path = require("path");
 const cors = require("cors");
 const auth = require("./routes/auth.js");
 const OwnerHome = require("./routes/ownerHome.js");
+const UserHome = require("./routes/UserHome.js");
 const app = express();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -25,6 +26,7 @@ mongoose
     console.log("DB Connected Successfully");
     app.use("/", auth);
     app.use("/createhome", OwnerHome);
+    app.use("/user", UserHome);
   })
   .catch((error) => {
     console.log(error.message);
@@ -34,9 +36,4 @@ app.listen(PORT, () => {
   console.log("Server running successfully on localhost:" + PORT);
 });
 
-// const __dirname = path.resolve();
-// app.use(express.static(path.join(__dirname, "/client/build")));
-// app.get("/", (req, res, next) => {
-//   res.sendFile(path.join(__dirname, "/client/build", "index.html"));
-// });
 mongoose.set("useFindAndModify", false);

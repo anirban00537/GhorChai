@@ -3,7 +3,6 @@ const HomeModel = require("../models/HouseModel.js");
 exports.getOwnerHome = getOwnerHome = async (req, res) => {
   const { id } = req.params;
   const home = await HomeModel.find({ homeOwner: id });
-  console.log(home);
   res.json(home);
   // console.log(data);
 };
@@ -21,7 +20,7 @@ exports.postOwnerHome = postOwnerHome = async (req, res) => {
       phone,
       homeOwner,
     } = home;
-    console.log(photo);
+
     const newHouseCreate = new HomeModel({
       title: title,
       description: description,
