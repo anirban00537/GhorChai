@@ -21,6 +21,7 @@ const HomeCreate = () => {
     phone: "",
     homeOwner: "",
   });
+  useEffect(() => {}, [homeData]);
 
   useEffect(() => {
     setHome({ ...home, homeOwner: user });

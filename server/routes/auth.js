@@ -2,9 +2,11 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/users.js");
+const { getUserInfo } = require("../controllers/UserInfo.js");
 const JWT_SECRET = "abjflhbasldfbajlhdbffvfkjasnfdkjanfdkjnsa";
 
 const router = express.Router();
+router.get("/getuser/:id", getUserInfo);
 
 router.post("/signup", (req, res) => {
   const { name, email, password, role, address, nid, phone, sex } = req.body;

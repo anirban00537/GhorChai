@@ -16,5 +16,4 @@ export const FetchUserWithoutLogin = () => {
 export const SendAndTakeHome = () => {
   const dispatch = useDispatch();
   dispatch(UserHomeAction());
-  console.log("function");
 };

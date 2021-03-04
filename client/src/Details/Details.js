@@ -1,7 +1,8 @@
-import Navbar from "../Navbar/Navbar";
 import "./Details.css";
+
+import Navbar from "../Navbar/Navbar";
 import { useLocation, useHistory } from "react-router-dom";
-const Details = () => {
+const HomeItemDashboard = () => {
   const history = useHistory();
   const location = useLocation();
   if (!location.state) {
@@ -18,6 +19,7 @@ const Details = () => {
     title,
     address,
   } = location.state.data;
+  // useEffect(() => {});
   return (
     <div>
       <Navbar />
@@ -30,17 +32,20 @@ const Details = () => {
           </div>
           <div className="col DetailsContainer">
             <p className="details">Details</p>
-            <h3 className="title">{title}</h3>
+            <h5 className="title">{title}</h5>
             <p className="address">{address}</p>
             <button className=" btn btnRent btn-">Rent now</button>
-            <div className="row ">
+            <div className="row detSecAD ">
               <div className="col-3">
+                <p className="detINFO">Phone Number</p>
                 <p className="bedbath">{phone}</p>
               </div>
               <div className="col-3">
+                <p className="detINFO">NID</p>
                 <p className="bedbath">{nid}</p>
               </div>
               <div className="col-3">
+                <p className="detINFO">Price</p>
                 <p className="bedbath">{price}</p>
               </div>
             </div>
@@ -53,4 +58,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default HomeItemDashboard;

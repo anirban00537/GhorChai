@@ -25,14 +25,23 @@
   font-weight: 300;
 }
 .bedbath {
-  font-size: 13px;
+  font-size: 16px;
   color: #72bcae;
-  font-weight: 600;
+  font-weight: bold;
 }
 .totalDetais {
-  font-size: 16px;
+  font-size: 13px;
   color: #adadad;
   font-weight: 500;
+}
+.detINFO {
+  font-size: 14px;
+  color: #858585;
+  font-weight: bold;
+}
+.detSecAD {
+  display: flex;
+  justify-content: space-between;
 }
 .btnRent {
   background-color: #e6f6f3;

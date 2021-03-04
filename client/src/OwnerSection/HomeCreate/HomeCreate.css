@@ -43,6 +43,7 @@
 .titleDemoLittle {
   font-size: 14px;
   color: #858585;
+  margin-left: 10px;
 }
 .NameTitledash {
   font-size: 33px;
@@ -60,5 +61,5 @@
   margin-top: 0px;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-start;
 }

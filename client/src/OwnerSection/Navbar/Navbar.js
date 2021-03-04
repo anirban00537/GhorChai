@@ -8,7 +8,7 @@ const Navbar = () => {
       <ul className="nav justify-content-center">
         <li className="nav-item">
           <Link className="nav-link" to="/">
-            Owner Dashboard
+            Dashboard
           </Link>
         </li>
         <li className="nav-item">
@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="nav username justify-content-end">
         <div class="btn-group">
           <button
-            class="btn btn-secondary btn-sm dropdown-toggle"
+            class="btn btn-secondary btn-sm dropdown-toggle logoutBtn"
             type="button"
             data-toggle="dropdown"
             aria-haspopup="true"
@@ -41,11 +41,11 @@ const Navbar = () => {
           </div>
         </div>
 
-        <img
+        {/* <img
           src="https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/original.jpeg"
           className="img-thumbnail img-thumbnail-navbar"
           alt="..."
-        ></img>
+        ></img> */}
       </div>
     </nav>
   );
