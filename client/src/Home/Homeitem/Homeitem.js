@@ -1,8 +1,11 @@
 import { useSelector } from "react-redux";
 import "./HomeHouses.css";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 const Homeitem = () => {
-  const home = useSelector((state) => state.userHome);
+  const homeapi = useSelector((state) => state.userHome);
+  const home = homeapi.filter((h) => h.status == "false");
+  console.log(homeapi);
+
   const history = useHistory();
   const toDetails = (data) => {
     history.push({
@@ -39,7 +42,9 @@ const Homeitem = () => {
                       toDetails(h);
                     }}
                   >
-                    Details
+                    <i class="fas fa-calendar-week"></i>
+
+                    <div> Details</div>
                   </button>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import "./userAuth.css";
+import FileBase from "react-file-base64";
 import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -13,6 +14,7 @@ const Signup = () => {
     nid: "",
     phone: "",
     sex: "",
+    photo: "",
   });
   const history = useHistory();
   const dispatch = useDispatch();
@@ -60,6 +62,15 @@ const Signup = () => {
               onChange={(e) => {
                 setAuth({ ...auth, name: e.target.value });
               }}
+            />
+          </div>
+
+          <div className="form-group addHomeWidth">
+            <label htmlFor="exampleInputEmail1"> Add Your Photo</label>
+            <FileBase
+              type="file"
+              multipla={false}
+              onDone={({ base64 }) => setAuth({ ...auth, photo: base64 })}
             />
           </div>
 

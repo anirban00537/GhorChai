@@ -60,10 +60,17 @@
   color: #72bcae;
 }
 .btnDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
   background-color: #e6f6f3;
   border-radius: 10%;
   color: #28bea3;
-  /* margin-left: 10px; */
+}
+.btnDetails > div {
+  margin-left: 6px;
 }
 .btnDetails:hover {
   color: #28bea3;

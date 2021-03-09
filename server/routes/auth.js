@@ -9,7 +9,17 @@ const router = express.Router();
 router.get("/getuser/:id", getUserInfo);
 
 router.post("/signup", (req, res) => {
-  const { name, email, password, role, address, nid, phone, sex } = req.body;
+  const {
+    name,
+    email,
+    password,
+    role,
+    address,
+    nid,
+    phone,
+    sex,
+    photo,
+  } = req.body;
 
   if (
     !email ||
@@ -42,6 +52,7 @@ router.post("/signup", (req, res) => {
           nid: nid,
           phone: phone,
           sex: sex,
+          photo: photo,
         });
 
         user

@@ -14,13 +14,14 @@ const Dashboard = () => {
     nid: "",
     phone: "",
     sex: "",
+    photo: "",
   });
   const id = useSelector((state) => state.user.user);
 
   useEffect(async () => {
     var a = await userInfo(id);
 
-    const { address, email, name, nid, phone, sex } = a.data[0];
+    const { address, email, name, nid, phone, sex, photo } = a.data[0];
     setUserData({
       address: address,
       email: email,
@@ -28,21 +29,18 @@ const Dashboard = () => {
       nid: nid,
       phone: phone,
       sex: sex,
+      photo: photo,
     });
   }, []);
 
   return (
     <div class="">
       <Navbar />
-
       <div className="containerDash">
         <div className="row">
           <div className="col-5 dpInfo">
             <div className="col DetSec">
-              <img
-                src="https://media.istockphoto.com/photos/smiling-man-outdoors-in-the-city-picture-id1179420343?k=6&m=1179420343&s=612x612&w=0&h=y7GrwxrbixTWvJfaeiu55rWXMGYr6oP583uzJJ4-Kis="
-                className="imageDp"
-              />
+              <img src={userData.photo} className="imageDp" />
             </div>
             <div className="col DetSec">
               <h3>Personal Info</h3>

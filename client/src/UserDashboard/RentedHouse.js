@@ -1,27 +1,55 @@
 import "./Dashboard.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+
 const RentedHouse = () => {
+  const user = localStorage.getItem("user");
+  const [house, setHouse] = useState([]);
+  const history = useHistory();
+  const rentedHouse = async () => {
+    const { data } = await axios.get(
+      `http://localhost:5000/user/userrentedhouse/${user}`
+    );
+    setHouse(data);
+  };
+  const toDetails = (data) => {
+    history.push({
+      pathname: "/details",
+      state: { data: data },
+    });
+  };
+
+  useEffect(() => {
+    rentedHouse();
+  }, []);
+
   return (
-    <div>
-      <div className="row containerRent">
-        <div className="col-4">
-          <div className="row imgRent">
-            <img
-              className="homeImagerent"
-              src="https://images.unsplash.com/photo-1554995207-c18c203602cb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OXx8bGl2aW5nJTIwcm9vbXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80"
-            />
+    <div className="">
+      <div className="rightOwnerrent">
+        {house.map((m) => (
+          <div className="submittedHome">
+            <div className="photoSectionDash">
+              {/* {m.photo.map((im) => (
+                <img className="innerImg" src={im} />
+              ))} */}
+              <img className="innerImg" src={m.photo[0]} />
+            </div>
+            <div className="titleDemoLittle">
+              <p>{m.title}</p>
+            </div>
+            <div className="btn_cover">
+              <button
+                className="btn btn_del btn-sm"
+                onClick={() => {
+                  toDetails(m);
+                }}
+              >
+                Details
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="col-8 ">
-          <div className="row">
-            <h6 className="CurrentRent">Currently Renting</h6>
-          </div>
-          <div className="row">
-            <p className="titleRen">Nice house with 5bedroom and 1 bathroom</p>
-          </div>
-          <div className="row">
-            <p className="addressRent">11 Moulovi Para Khulna</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
