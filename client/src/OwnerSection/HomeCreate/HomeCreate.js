@@ -1,10 +1,11 @@
 import "./HomeCreate.css";
 import FileBase from "react-file-base64";
 import { useEffect, useState } from "react";
-import { postHome } from "../../api/home";
+import { deleteHouse, postHome } from "../../api/home";
 import { useSelector, useDispatch } from "react-redux";
-import { HomeAction } from "../../features/actions/Home";
+import { DeleteHomeAction, HomeAction } from "../../features/actions/Home";
 import { Link, useHistory } from "react-router-dom";
+import emptyImage from "./undraw_blank_canvas_3rbb.png";
 const HomeCreate = () => {
   const [img, setImg] = useState([]);
   const dispatch = useDispatch();
@@ -21,12 +22,15 @@ const HomeCreate = () => {
     phone: "",
     homeOwner: "",
   });
-  useEffect(() => {}, [homeData]);
+
+  const deletehomefunction = (id) => {
+    dispatch(DeleteHomeAction(id));
+  };
 
   useEffect(() => {
     setHome({ ...home, homeOwner: user });
     dispatch(HomeAction(user));
-  }, []);
+  }, [dispatch]);
   const toDetails = (data) => {
     history.push({
       pathname: "/details",
@@ -54,6 +58,7 @@ const HomeCreate = () => {
       <div className="leftOwner">
         <form onSubmit={handelSubmit}>
           <div className="loginName">
+            <i className="fas fa-warehouse"></i>
             <label htmlFor="exampleInputEmail1" className="NameTitledash">
               Add A home
             </label>
@@ -173,31 +178,49 @@ const HomeCreate = () => {
         </form>
       </div>
       <div className="rightOwner">
-        {homeData.map((m) => (
-          <div className="submittedHome">
-            <div className="photoSectionDash">
-              {/* {m.photo.map((im) => (
+        {homeData.length < 1 ? (
+          <div className="imageEmptyContainer">
+            {" "}
+            <img src={emptyImage} className="imageEmpty" />
+            <h2>No Home</h2>
+          </div>
+        ) : (
+          <div>
+            {" "}
+            {homeData.map((m) => (
+              <div className="submittedHome">
+                <div className="photoSectionDash">
+                  {/* {m.photo.map((im) => (
                 <img className="innerImg" src={im} />
               ))} */}
-              <img className="innerImg" src={m.photo[0]} />
-            </div>
-            <div className="titleDemoLittle">
-              <p>{m.title}</p>
-            </div>
-            <div className="btn_cover">
-              <button className="btn btn_del btn-sm">Delete</button>
+                  <img className="innerImg" src={m.photo[0]} />
+                </div>
+                <div className="titleDemoLittle">
+                  <p>{m.title}</p>
+                </div>
+                <div className="btn_cover">
+                  <button
+                    className="btn btn_del btn-sm"
+                    onClick={() => {
+                      deletehomefunction(m._id);
+                    }}
+                  >
+                    Delete
+                  </button>
 
-              <button
-                className="btn btn_del btn-sm"
-                onClick={() => {
-                  toDetails(m);
-                }}
-              >
-                Details
-              </button>
-            </div>
+                  <button
+                    className="btn btn_del btn-sm"
+                    onClick={() => {
+                      toDetails(m);
+                    }}
+                  >
+                    Details
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        )}
       </div>
     </div>
   );

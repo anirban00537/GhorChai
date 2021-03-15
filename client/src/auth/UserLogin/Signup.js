@@ -13,7 +13,8 @@ const Signup = () => {
     address: "",
     nid: "",
     phone: "",
-    sex: "",
+    sex: "Male",
+
     photo: "",
   });
   const history = useHistory();
@@ -142,7 +143,7 @@ const Signup = () => {
           <button type="submit" className="btn greenClrBtn">
             Signup
           </button>
-          <Link className="rent btn" to="/userlogin">
+          <Link className="rentauth btn" to="/userlogin">
             Signin
           </Link>
         </form>

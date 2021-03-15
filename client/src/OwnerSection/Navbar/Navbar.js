@@ -3,20 +3,24 @@ import { Link, useHistory } from "react-router-dom";
 const Navbar = () => {
   const history = useHistory();
   return (
-    <nav className="navbar fixed-top">
+    <nav className="navbar fixed-top ">
       <div className="nav justify-content-start brandname">GHORCHAI</div>
-      <ul className="nav justify-content-center">
-        <li className="nav-item">
-          <Link className="nav-link" to="/">
-            Dashboard
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/complain">
-            Complains
-          </Link>
-        </li>
-      </ul>
+      <div className="navCenterItem">
+        <ul className="nav justify-content-center">
+          <li className="nav-item brNav">
+            <i class="fab fa-dashcube"></i>
+            <Link className=" nav-link" to="/">
+              Dashboard
+            </Link>
+          </li>
+          <li className="nav-item">
+            <i class="fas fa-sticky-note"></i>
+            <Link className="nav-link" to="/complain">
+              Complains
+            </Link>
+          </li>
+        </ul>
+      </div>
       <div className="nav username justify-content-end">
         <div class="btn-group">
           <button

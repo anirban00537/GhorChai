@@ -14,7 +14,25 @@
   height: 100%;
   width: 100%;
 }
-
+.loginName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-warehouse {
+  font-size: 22px;
+  margin-right: 11px;
+  color: #008170;
+}
+.imageEmptyContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.imageEmpty {
+  width: 450px;
+}
 .rightOwner {
   display: flex;
   flex: 0.5 1;
@@ -47,7 +65,7 @@
 }
 .NameTitledash {
   font-size: 33px;
-  color: #858585;
+  color: #008170;
 }
 .btn_del {
   color: #fff;

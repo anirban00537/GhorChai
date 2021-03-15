@@ -7,6 +7,15 @@ exports.getOwnerHome = getOwnerHome = async (req, res) => {
   // console.log(data);
 };
 
+exports.deleteHome = deleteHome = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const home = await HomeModel.findByIdAndDelete({ _id: id });
+    res.json(home._id);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 exports.postOwnerHome = postOwnerHome = async (req, res) => {
   try {
     const { home, photo } = req.body;
@@ -19,6 +28,7 @@ exports.postOwnerHome = postOwnerHome = async (req, res) => {
       nid,
       phone,
       homeOwner,
+      currentlyRenting,
     } = home;
 
     const newHouseCreate = new HomeModel({
@@ -30,7 +40,9 @@ exports.postOwnerHome = postOwnerHome = async (req, res) => {
       nid: nid,
       phone: phone,
       homeOwner: homeOwner,
+      currentlyRenting: currentlyRenting,
       photo: photo,
+      status: "false",
     });
 
     newHouseCreate.save();

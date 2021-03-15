@@ -7,23 +7,30 @@ const Navbar = () => {
   return (
     <nav className="navbar fixed-top mainNavbar">
       <div className="nav justify-content-start brandname">GHORCHAI</div>
-      <ul className="nav justify-content-center">
-        <li className="nav-item">
-          <Link className="nav-link" to="/">
-            Home
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/search">
-            Search
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/dashboard">
-            Dashboard
-          </Link>
-        </li>
-      </ul>
+      <div className="navCenterItem">
+        <ul className="nav justify-content-center">
+          <li className="nav-item brNav">
+            <i class="fas fa-house-damage"></i>
+            <Link className="nav-link" to="/">
+              Home
+            </Link>
+          </li>
+
+          <li className="nav-item brNav">
+            <i class="fas fa-search"></i>
+            <Link className="nav-link" to="/search">
+              Search
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <i class="fab fa-dashcube"></i>
+            <Link className="nav-link" to="/dashboard">
+              Dashboard
+            </Link>
+          </li>
+        </ul>
+      </div>
       <div className="nav username justify-content-end">
         <div class="btn-group">
           <button

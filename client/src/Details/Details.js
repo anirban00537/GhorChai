@@ -28,9 +28,23 @@ const HomeItemDashboard = () => {
       .patch("http://localhost:5000/user/setrent", {
         _id: _id,
         user_id: user_id,
+        rent: 1,
       })
       .then((data) => {
         console.log(data.nessage);
+        history.push("/dashboard");
+      });
+  };
+  const UnrentHome = () => {
+    axios
+      .patch("http://localhost:5000/user/setrent", {
+        _id: _id,
+        user_id: user_id,
+        rent: 0,
+      })
+      .then((data) => {
+        console.log(data.nessage);
+        history.push("/");
       });
   };
   // useEffect(() => {});
@@ -60,9 +74,15 @@ const HomeItemDashboard = () => {
                 <div>Rent now</div>
               </button>
             ) : (
-              <div className="rentedUser">
-                <div>Rented</div>
-              </div>
+              <button
+                className="btn btnRent "
+                onClick={() => {
+                  UnrentHome();
+                }}
+              >
+                <i className="fas fa-bed"></i>
+                <div>Unrent</div>
+              </button>
             )}
 
             <div className="row detSecAD ">

@@ -1,9 +1,9 @@
+const { Mongoose } = require("mongoose");
 const HomeModel = require("../models/HouseModel.js");
 
 exports.getUserHome = getUserHome = async (req, res) => {
   const home = await HomeModel.find();
   res.json(home);
-  // console.log(data);
 };
 exports.userrentedhouse = userrentedhouse = async (req, res) => {
   const id = req.params.id;
@@ -14,13 +14,23 @@ exports.userrentedhouse = userrentedhouse = async (req, res) => {
 exports.setUserRent = setUserRent = async (req, res) => {
   const updateHome = req.body;
 
-  const updatedHome = await HomeModel.findOneAndUpdate(
-    { _id: updateHome._id },
-    { currentlyRenting: updateHome.user_id, status: "true" },
-    {
-      new: true,
-    }
-  );
+  if (updateHome.rent == 1) {
+    const updatedHome = await HomeModel.findOneAndUpdate(
+      { _id: updateHome._id },
+      { currentlyRenting: updateHome.user_id, status: "true" },
+      {
+        new: true,
+      }
+    );
+  } else {
+    const updatedHome = await HomeModel.findOneAndUpdate(
+      { _id: updateHome._id },
+      { currentlyRenting: null, status: "false" },
+      {
+        new: true,
+      }
+    );
+  }
 
   // const postMessages = await DetailsModel.findOneAndUpdate(
   //   { detailsId: 1234 },

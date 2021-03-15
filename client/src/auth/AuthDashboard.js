@@ -8,7 +8,7 @@ const AuthDashboard = () => {
         <img src="./image/home.png" className="authimage" />
       </div>
       <div className="secondSection  ">
-        <Link className="rent btn" to="/userlogin">
+        <Link className="rentauth btn" to="/userlogin">
           Signin/up For Rent
         </Link>
 

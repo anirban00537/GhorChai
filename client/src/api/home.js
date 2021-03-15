@@ -11,3 +11,4 @@ export const getHome = (id) => axios.get(`${url}` + "createhome/" + `${id}`);
 
 export const getUserHome = () => axios.get(url + "user/gethome");
 // export const deletePortfolio = (id) => axios.delete(`${Portfoliourl}/${id}`);
+export const deleteHouse = (id) => axios.delete(url + `createhome/${id}`);

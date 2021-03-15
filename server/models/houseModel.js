@@ -38,21 +38,16 @@ const HouseSchema = new mongoose.Schema({
   },
   homeOwner: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
+
     ref: "homeOwner",
   },
   status: {
     type: String,
-    Default: "false",
   },
-  // requestedUser: [
-  //   {
-  //     type: String,
-  //   },
-  // ],
+
   currentlyRenting: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
+
     ref: "currentlyRenting",
   },
 });

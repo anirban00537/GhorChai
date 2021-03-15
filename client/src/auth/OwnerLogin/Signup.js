@@ -132,7 +132,7 @@ const Signup = () => {
           <button type="submit" className="btn greenClrBtn">
             Signup
           </button>
-          <Link className="rent btn" to="/ownerlogin">
+          <Link className="rentauth btn" to="/ownerlogin">
             Signin
           </Link>
         </form>

@@ -89,28 +89,6 @@ const Dashboard = () => {
           </div>
           <div className="col-7">
             <RentedHouse />
-            <div className="row complainRentHouse">
-              <h6 className="titleColorReport">Report a complain to owner</h6>
-            </div>
-            <div className="row ">
-              <div class="input-group mb-3 col-10">
-                <textarea
-                  type="text"
-                  class="form-control"
-                  aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-default"
-                ></textarea>
-                <button className=" btn SearchRent resultSearch">
-                  complain
-                </button>
-              </div>
-            </div>
-
-            <Complain name="Anirban" chat="That was fun" />
-            <Complain
-              name="OWashik"
-              chat="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution,It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution"
-            />
           </div>
         </div>
       </div>
