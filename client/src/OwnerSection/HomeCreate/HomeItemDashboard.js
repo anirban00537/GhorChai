@@ -1,7 +1,26 @@
 import "./homeItemDashboard.css";
 import Navbar from "../Navbar/Navbar";
+import { Button, Modal } from "react-bootstrap";
 import { useLocation, useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getcurrentlyRenting } from "../../api/home";
+
 const HomeItemDashboard = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [currentlyRentingData, setcurrentlyRentingData] = useState({
+    photo: "",
+    name: "",
+    email: "",
+    address: "",
+    nid: "",
+    phone: "",
+    sex: "",
+  });
+  useEffect(() => {
+    getDataOfCurrentRenter(currentlyRenting);
+  }, []);
   const history = useHistory();
   const location = useLocation();
   if (!location.state) {
@@ -17,8 +36,17 @@ const HomeItemDashboard = () => {
     price,
     title,
     address,
+    currentlyRenting,
   } = location.state.data;
-  // useEffect(() => {});
+
+  const getDataOfCurrentRenter = async (id) => {
+    if (currentlyRenting == null) {
+      return;
+    }
+    const { data } = await getcurrentlyRenting(id);
+    setcurrentlyRentingData(data);
+  };
+
   return (
     <div className="">
       <div>
@@ -34,7 +62,59 @@ const HomeItemDashboard = () => {
               <p className="details">Details</p>
               <h5 className="title">{title}</h5>
               <p className="address">{address}</p>
-              <button className=" btn btnRent btn-">Rent now</button>
+              <p className="title">{area}</p>
+              {currentlyRenting == null ? (
+                ""
+              ) : (
+                <button className=" btn btnRent" onClick={handleShow}>
+                  Renter Details
+                </button>
+              )}
+              <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                  <Modal.Title>Rented Person Details</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <div className="mainRentalDet">
+                    <div className="dpCon">
+                      <img
+                        className="imageDp"
+                        src={currentlyRentingData.photo}
+                      />
+                    </div>
+                    <div>
+                      <p className="detName">Name</p>
+                      <h5>{currentlyRentingData.name}</h5>
+                    </div>
+                    <div>
+                      <p className="detName">Email</p>
+                      <h5>{currentlyRentingData.email}</h5>
+                    </div>
+                    <div>
+                      <p className="detName">Address</p>
+                      <h5>{currentlyRentingData.address}</h5>
+                    </div>
+                    <div>
+                      <p className="detName">NID</p>
+                      <h5>{currentlyRentingData.nid}</h5>
+                    </div>
+                    <div>
+                      <p className="detName">Phone</p>
+                      <h5>{currentlyRentingData.phone}</h5>
+                    </div>
+                    <div>
+                      <p className="detName">Gender</p>
+                      <h5>{currentlyRentingData.sex}</h5>
+                    </div>
+                  </div>
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Close
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+
               <div className="row detSecAD ">
                 <div className="col-3">
                   <p className="detINFO">Phone Number</p>

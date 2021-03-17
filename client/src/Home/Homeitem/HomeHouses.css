@@ -1,13 +1,32 @@
 .homeImage {
-  height: 200px;
-  width: 600px;
+  display: flex;
+  width: 156px;
+}
+.homeImageContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 161px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 7px;
+}
+.addressArea{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .mainfile {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   margin: 10px;
+  height:140px;
+  padding-top: 10px;
+  border-bottom: 1px solid rgb(236, 236, 236);
+
 }
+
 .colDetails {
   display: flex;
   justify-content: flex-start;
@@ -24,9 +43,10 @@
   display: flex;
   align-content: center;
 }
+
 .titleHome {
-  font-size: 19px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 700;
   color: #858585;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -34,15 +54,22 @@
   overflow: hidden;
   width: 30em;
 }
+.titleWithMoney{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .priceHome {
-  font-size: 22px;
-  color: #72bcae;
+  font-size: 18px;
+  color: #9c9c9c;
   font-weight: 700;
 }
+
 .place {
-  color: #717171;
-  font-weight: bold;
-  margin-top: 10px;
+  color: #7d7d7d;
+  font-weight: 100;
+  /* margin-top: 10px; */
+  margin:0px;
   text-overflow: ellipsis;
   white-space: nowrap;
   display: block;
@@ -51,8 +78,14 @@
 }
 .bedroomS {
   font-size: 12px;
-  color: #a6a6a6;
-  margin-top: -7px;
+  color: #fff;
+  margin-top: 4px;
+  font-weight: 700;
+  background-color: #34495e;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 4px;
+
 }
 .btnRent {
   background-color: #e6f6f3;
@@ -68,6 +101,9 @@
   background-color: #e6f6f3;
   border-radius: 10%;
   color: #28bea3;
+  font-size: 16px;
+  font-weight: 600;
+  /* width: 100%; */
 }
 .btnDetails > div {
   margin-left: 6px;

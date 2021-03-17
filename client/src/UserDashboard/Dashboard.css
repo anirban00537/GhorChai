@@ -8,9 +8,69 @@
   margin-left: 80px;
   width: 93%;
 }
+.btn_cover_yo {
+  display: flex;
+}
+.titleDemoLittleMod {
+  font-size: 14px;
+  color: #858585;
+  margin-left: 10px;
+  width: 100%;
+}
+.ownerChat {
+  width: 100%;
+  display: flex;
+
+  margin: 0px;
+  justify-content: flex-end;
+}
+.renterChat {
+  width: 100%;
+  display: flex;
+
+  margin: 0px;
+  justify-content: flex-start;
+}
+.renterChath1 {
+  background-color: #e7e7e7;
+  padding: 9px;
+  border-radius: 10px;
+  color: rgb(70, 70, 70);
+  max-width: 70%;
+}
+.ownerChath1 {
+  background-color: #78d6c3;
+  padding: 9px;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 70%;
+}
 .DetSec {
   display: flex;
   justify-content: center;
+}
+.innerImgcstm {
+  width: 128px;
+}
+.btn_coverthis {
+  /* margin: 10px; */
+  margin-top: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.btn_complain {
+  color: white;
+  background-color: rgb(255, 116, 116);
+  height: 30px;
+
+  margin: 2px;
+}
+.submittedHomethis {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: space-between;
 }
 .titleColor {
   color: #72bcae;

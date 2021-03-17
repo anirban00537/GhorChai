@@ -5,10 +5,11 @@
   justify-content: center;
 }
 .inputSearchBox {
-  width: 300px;
+  width: 519px;
   height: 40px;
   border-color: 1px #72bcae;
 }
+
 .inputSearchBoxCity {
   width: 200px;
   height: 40px;

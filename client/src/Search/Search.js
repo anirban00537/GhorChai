@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 const Search = () => {
-  const [area, setArea] = useState();
+  const [area, setArea] = useState("Khalishpur");
   const history = useHistory();
 
   const [allhomes, setHomes] = useState([]);
@@ -16,6 +16,9 @@ const Search = () => {
       state: { data: data },
     });
   };
+  useEffect(() => {
+    onSub();
+  }, []);
   const getHome = async (area) => {
     const { data } = await axios.get(
       `http://localhost:5000/user/searchHome/${area}`
@@ -24,6 +27,7 @@ const Search = () => {
   };
   const onSub = async () => {
     const { homes } = await getHome(area);
+    // const h=homes.filter((house)=>house)
     setHomes(homes);
   };
 
@@ -56,32 +60,31 @@ const Search = () => {
       <div className="ssrchFld">
         {allhomes.map((h) => (
           <div className="mainfile ">
-            <div className="row col-9">
-              <div className="col-5 homeImage ">
-                <img key={h.nid} className="col homeImage" src={h.photo[0]} />
-              </div>
-              <div className="col-7 colDetails">
-                <div className="priceAndTitle">
-                  <div className="row">
-                    <div className="col-7 titleHome">{h.title}</div>
-                    <div className="col-5 priceHome">{h.price}TK</div>
-                  </div>
-                  <div className="row">
-                    <p className="place col-12">{h.address}</p>
-                  </div>
-                  <div className="row">
-                    <p className="col-12 bedroomS">{h.area}</p>
-                  </div>
-                  <div className="row btn-area col-12">
-                    <button
-                      className="btnDetails btn btn-"
-                      onClick={() => {
-                        toDetails(h);
-                      }}
-                    >
-                      Details
-                    </button>
-                  </div>
+            <div className="homeImageContainer">
+              <img key={h.nid} className="homeImage" src={h.photo[0]} />
+            </div>
+            <div className="colDetails">
+              <div className="priceAndTitle">
+                <div className=" titleWithMoney">
+                  <div className="titleHome">{h.title}</div>
+                  <div className=" priceHome">{h.price}TK</div>
+                </div>
+                <div className="addressArea">
+                  <p className="place ">{h.address}</p>
+                  <p className=" bedroomS">{h.area}</p>
+                </div>
+
+                <div className="">
+                  <button
+                    className="btnDetails btn btn-"
+                    onClick={() => {
+                      toDetails(h);
+                    }}
+                  >
+                    <i class="fas fa-calendar-week"></i>
+
+                    <div> Details</div>
+                  </button>
                 </div>
               </div>
             </div>

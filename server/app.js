@@ -26,6 +26,7 @@ mongoose
     console.log("DB Connected Successfully");
     app.use("/", auth);
     app.use("/createhome", OwnerHome);
+
     app.use("/user", UserHome);
   })
   .catch((error) => {

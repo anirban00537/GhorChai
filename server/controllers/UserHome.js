@@ -10,6 +10,22 @@ exports.userrentedhouse = userrentedhouse = async (req, res) => {
   const home = await HomeModel.find({ currentlyRenting: id });
   res.json(home);
 };
+//yet to done
+exports.complainControl = complainControl = async (req, res) => {
+  const { id, complain } = req.body;
+
+  const complainHome = await HomeModel.findOneAndUpdate(
+    { _id: id },
+    {
+      $push: { complains: complain },
+    },
+    {
+      new: true,
+    }
+  );
+  console.log(complain);
+  res.json(complainHome);
+};
 
 exports.setUserRent = setUserRent = async (req, res) => {
   const updateHome = req.body;
@@ -17,7 +33,10 @@ exports.setUserRent = setUserRent = async (req, res) => {
   if (updateHome.rent == 1) {
     const updatedHome = await HomeModel.findOneAndUpdate(
       { _id: updateHome._id },
-      { currentlyRenting: updateHome.user_id, status: "true" },
+      {
+        currentlyRenting: updateHome.user_id,
+        status: "true",
+      },
       {
         new: true,
       }
@@ -25,7 +44,7 @@ exports.setUserRent = setUserRent = async (req, res) => {
   } else {
     const updatedHome = await HomeModel.findOneAndUpdate(
       { _id: updateHome._id },
-      { currentlyRenting: null, status: "false" },
+      { currentlyRenting: null, status: "false", $set: { complains: [] } },
       {
         new: true,
       }
@@ -46,6 +65,7 @@ exports.searchHome = searchHome = async (req, res) => {
   const { area } = req.params;
   const homes = await HomeModel.find({
     area: { $regex: "^" + area, $options: "i" },
+    currentlyRenting: null,
   });
 
   res.status(200).json({ homes: homes });

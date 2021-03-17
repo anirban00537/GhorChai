@@ -29,6 +29,7 @@ const HomeItemDashboard = () => {
         _id: _id,
         user_id: user_id,
         rent: 1,
+        complains: [],
       })
       .then((data) => {
         console.log(data.nessage);

@@ -3,7 +3,11 @@ import FileBase from "react-file-base64";
 import { useEffect, useState } from "react";
 import { deleteHouse, postHome } from "../../api/home";
 import { useSelector, useDispatch } from "react-redux";
-import { DeleteHomeAction, HomeAction } from "../../features/actions/Home";
+import {
+  createHome,
+  DeleteHomeAction,
+  HomeAction,
+} from "../../features/actions/Home";
 import { Link, useHistory } from "react-router-dom";
 import emptyImage from "./undraw_blank_canvas_3rbb.png";
 const HomeCreate = () => {
@@ -21,6 +25,7 @@ const HomeCreate = () => {
     nid: "",
     phone: "",
     homeOwner: "",
+    currentlyRenting: null,
   });
 
   const deletehomefunction = (id) => {
@@ -39,18 +44,19 @@ const HomeCreate = () => {
   };
   const handelSubmit = async (e) => {
     e.preventDefault();
-    await postHome(home, img);
+    // await postHome(home, img);
+    dispatch(createHome(home, img));
     setHome({
       title: "",
       description: "",
       address: "",
       price: 0,
-      area: "",
+      area: "Sonadanga",
       nid: "",
       phone: "",
       homeOwner: "",
     });
-    dispatch(HomeAction(user));
+    // dispatch(HomeAction(user));
   };
 
   return (
@@ -196,6 +202,11 @@ const HomeCreate = () => {
                   <img className="innerImg" src={m.photo[0]} />
                 </div>
                 <div className="titleDemoLittle">
+                  {m.currentlyRenting ? (
+                    <p className="rentedOwner">Rented</p>
+                  ) : (
+                    <p className="NotrentedOwner">Not Rented</p>
+                  )}
                   <p>{m.title}</p>
                 </div>
                 <div className="btn_cover">

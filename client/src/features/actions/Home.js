@@ -1,5 +1,10 @@
-import { getHome, getUserHome, deleteHouse } from "../../api/home";
-import { DELETE_HOME, SET_HOME, SET_USER_HOME } from "../constants/actionType";
+import { getHome, getUserHome, deleteHouse, postHome } from "../../api/home";
+import {
+  DELETE_HOME,
+  SET_HOME,
+  SET_USER_HOME,
+  CREATE_HOME,
+} from "../constants/actionType";
 
 export const HomeAction = (id) => async (dispatch) => {
   try {
@@ -8,6 +13,15 @@ export const HomeAction = (id) => async (dispatch) => {
     dispatch({ type: SET_HOME, payload: data });
   } catch (error) {
     console.error(error.message);
+  }
+};
+export const createHome = (home, img) => async (dispatch) => {
+  try {
+    const { data } = await postHome(home, img);
+    console.log(data, "printed");
+    dispatch({ type: CREATE_HOME, payload: data });
+  } catch (error) {
+    console.log(error.message);
   }
 };
 

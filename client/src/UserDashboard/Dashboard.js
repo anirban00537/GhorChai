@@ -88,6 +88,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="col-7">
+            <h5>Rented House</h5>
             <RentedHouse />
           </div>
         </div>

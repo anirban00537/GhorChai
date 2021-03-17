@@ -19,6 +19,7 @@ const HouseSchema = new mongoose.Schema({
       required: true,
     },
   ],
+  complains: [{ name: String, complains: String }],
 
   price: {
     type: Number,
