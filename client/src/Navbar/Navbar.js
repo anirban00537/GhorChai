@@ -40,7 +40,7 @@ const Navbar = () => {
             aria-haspopup="true"
             aria-expanded="false"
           >
-            Anirban Roy
+            Options
           </button>
           <div
             class="dropdown-menu"

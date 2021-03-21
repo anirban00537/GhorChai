@@ -3,6 +3,8 @@ import FileBase from "react-file-base64";
 import { useEffect, useState } from "react";
 import { deleteHouse, postHome } from "../../api/home";
 import { useSelector, useDispatch } from "react-redux";
+import { Button, Modal } from "react-bootstrap";
+import { complains } from "../../api/home";
 import {
   createHome,
   DeleteHomeAction,
@@ -11,6 +13,10 @@ import {
 import { Link, useHistory } from "react-router-dom";
 import emptyImage from "./undraw_blank_canvas_3rbb.png";
 const HomeCreate = () => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [m1, setM1] = useState();
   const [img, setImg] = useState([]);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -27,6 +33,11 @@ const HomeCreate = () => {
     homeOwner: "",
     currentlyRenting: null,
   });
+  const [complain, setComplain] = useState({
+    name: "owner",
+    complains: "",
+  });
+  const [check, setCheck] = useState(false);
 
   const deletehomefunction = (id) => {
     dispatch(DeleteHomeAction(id));
@@ -35,6 +46,7 @@ const HomeCreate = () => {
   useEffect(() => {
     setHome({ ...home, homeOwner: user });
     dispatch(HomeAction(user));
+    setM1(homeData.complains);
   }, [dispatch]);
   const toDetails = (data) => {
     history.push({
@@ -44,7 +56,7 @@ const HomeCreate = () => {
   };
   const handelSubmit = async (e) => {
     e.preventDefault();
-    // await postHome(home, img);
+
     dispatch(createHome(home, img));
     setHome({
       title: "",
@@ -56,6 +68,7 @@ const HomeCreate = () => {
       phone: "",
       homeOwner: "",
     });
+    setImg([null]);
     // dispatch(HomeAction(user));
   };
 
@@ -116,6 +129,7 @@ const HomeCreate = () => {
             <FileBase
               type="file"
               multipla={false}
+              value={img}
               onDone={({ base64 }) => setImg([...img, base64])}
             />
           </div>
@@ -134,7 +148,7 @@ const HomeCreate = () => {
               }}
             />
           </div>
-          <div class="form-group">
+          <div class="form-group addHomeWidth">
             <label for="exampleFormControlSelect1">Area</label>
             <select
               class="form-control"
@@ -147,16 +161,22 @@ const HomeCreate = () => {
               <option>Sonadanga</option>
               <option>Khalishpur</option>
               <option>Khulna Sadar</option>
+              <option>Sibbari</option>
+              <option>Nirala</option>
+              <option>Gollamari</option>
+              <option>Dakop</option>
+              <option>Rupsha</option>
+              <option>Kalibari</option>
             </select>
           </div>
           <div className="form-group addHomeWidth">
-            <label htmlFor="exampleInputEmail1">NID</label>
+            <label htmlFor="exampleInputEmail1">Rooms</label>
             <input
               type="text"
               className="form-control "
               id="exampleInputnid"
               aria-describedby="emailHelp"
-              placeholder="Enter Nid Number"
+              placeholder="Enter Rooms number"
               value={home.nid}
               onChange={(e) => {
                 setHome({ ...home, nid: e.target.value });
@@ -184,6 +204,61 @@ const HomeCreate = () => {
         </form>
       </div>
       <div className="rightOwner">
+        {m1 != undefined ? (
+          <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+              <Modal.Title>Complain History</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              {m1.complains.map((c) =>
+                c.name == "owner" ? (
+                  <div className="ownerChat">
+                    <p className="ownerChath1">{c.complains}</p>
+                  </div>
+                ) : (
+                  <div className="renterChat">
+                    <p className="renterChath1">{c.complains}</p>
+                  </div>
+                )
+              )}
+            </Modal.Body>
+            <Modal.Footer>
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Ans A Reply"
+                  aria-label="Ans A Reply"
+                  aria-describedby="button-addon2"
+                  value={complain.complains}
+                  onChange={(e) => {
+                    setComplain({
+                      ...complain,
+                      complains: e.target.value,
+                    });
+                  }}
+                />
+
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="button-addon2"
+                  onClick={() => {
+                    complains(m1._id, complain);
+                    dispatch(HomeAction(user));
+                    setComplain({ name: "owner", complains: "" });
+                    handleClose();
+                  }}
+                >
+                  Send
+                </button>
+              </div>
+            </Modal.Footer>
+          </Modal>
+        ) : (
+          ""
+        )}
+
         {homeData.length < 1 ? (
           <div className="imageEmptyContainer">
             {" "}
@@ -211,13 +286,35 @@ const HomeCreate = () => {
                 </div>
                 <div className="btn_cover">
                   <button
-                    className="btn btn_del btn-sm"
+                    className="btn btn_del btn-sm disable"
                     onClick={() => {
                       deletehomefunction(m._id);
                     }}
                   >
                     Delete
                   </button>
+                  {m.currentlyRenting ? (
+                    <button
+                      className="btn btn_complain btn-sm"
+                      onClick={() => {
+                        setM1(m);
+                        handleShow();
+                      }}
+                    >
+                      Complains
+                    </button>
+                  ) : (
+                    <button
+                      className="btn btn_complain btn-sm"
+                      onClick={() => {
+                        setM1(m);
+                        handleShow();
+                      }}
+                      disabled
+                    >
+                      Complains
+                    </button>
+                  )}
 
                   <button
                     className="btn btn_del btn-sm"

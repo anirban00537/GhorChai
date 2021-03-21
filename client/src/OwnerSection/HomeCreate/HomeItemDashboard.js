@@ -61,12 +61,19 @@ const HomeItemDashboard = () => {
             <div className="col DetailsContainer">
               <p className="details">Details</p>
               <h5 className="title">{title}</h5>
-              <p className="address">{address}</p>
-              <p className="title">{area}</p>
+              <p className="address">
+                <i class="fas fa-map-marker-alt"></i>
+                {address}
+              </p>
+              <p className="title">
+                <i class="fas fa-chart-area"></i>
+                {area}
+              </p>
               {currentlyRenting == null ? (
                 ""
               ) : (
                 <button className=" btn btnRent" onClick={handleShow}>
+                  <i class="fas fa-audio-description"></i>
                   Renter Details
                 </button>
               )}
@@ -117,19 +124,29 @@ const HomeItemDashboard = () => {
 
               <div className="row detSecAD ">
                 <div className="col-3">
-                  <p className="detINFO">Phone Number</p>
+                  <p className="detINFO">
+                    <i class="fas fa-phone"></i>Phone{" "}
+                  </p>
                   <p className="bedbath">{phone}</p>
                 </div>
                 <div className="col-3">
-                  <p className="detINFO">NID</p>
+                  <p className="detINFO">
+                    {" "}
+                    <i class="fas fa-id-badge"></i>NID
+                  </p>
                   <p className="bedbath">{nid}</p>
                 </div>
                 <div className="col-3">
-                  <p className="detINFO">Price</p>
+                  <p className="detINFO">
+                    <i class="fas fa-money-bill-wave-alt"></i>Price
+                  </p>
                   <p className="bedbath">{price}</p>
                 </div>
               </div>
-
+              <p className="damtiti">
+                {" "}
+                <i class="fas fa-audio-description"></i>Description
+              </p>
               <p className="totalDetais">{description}</p>
             </div>
           </div>

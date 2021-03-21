@@ -7,6 +7,10 @@ const HomeHouses = () => {
   return (
     <div className="">
       <Homeitem />
+      {/* <div>
+        <h1>This is a part</h1>
+        homehouseMAin
+      </div> */}
     </div>
   );
 };

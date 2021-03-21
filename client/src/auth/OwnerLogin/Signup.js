@@ -1,6 +1,7 @@
 import "./ownerAuth.css";
 import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
+import FileBase from "react-file-base64";
 
 import { useDispatch } from "react-redux";
 import { signup } from "../../api/user";
@@ -14,6 +15,7 @@ const Signup = () => {
     nid: "",
     phone: "",
     sex: "Male",
+    photo: "",
   });
   const history = useHistory();
   const dispatch = useDispatch();
@@ -61,6 +63,15 @@ const Signup = () => {
               onChange={(e) => {
                 setAuth({ ...auth, name: e.target.value });
               }}
+            />
+          </div>
+
+          <div className="form-group addHomeWidth">
+            <label htmlFor="exampleInputEmail1"> Add Your Photo</label>
+            <FileBase
+              type="file"
+              multipla={false}
+              onDone={({ base64 }) => setAuth({ ...auth, photo: base64 })}
             />
           </div>
 

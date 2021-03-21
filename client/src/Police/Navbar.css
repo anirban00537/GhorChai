@@ -22,17 +22,17 @@
   padding-left: 10px;
 }
 .logoutBtn {
-  background-color: white !important;
-  border: #5ec4af !important;
+  background-color: #fff;
+  border: #f3f3f3;
   color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .logoutBtn:hover {
-  background-color: #5ec4af !important;
+  background-color: #5ec4af;
   border: #5ec4af;
-  color: white !important;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;

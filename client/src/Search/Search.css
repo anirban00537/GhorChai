@@ -7,9 +7,11 @@
 .inputSearchBox {
   width: 519px;
   height: 40px;
-  border-color: 1px #72bcae;
+  border: 1px solid #e2e2e2;
 }
-
+::placeholder {
+  color: rgb(175, 175, 175) !important;
+}
 .inputSearchBoxCity {
   width: 200px;
   height: 40px;

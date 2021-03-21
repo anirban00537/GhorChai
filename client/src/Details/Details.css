@@ -4,6 +4,7 @@
   padding: 5px;
   justify-content: center;
   margin-top: 50px;
+  margin-bottom: 51px;
 }
 .item {
   width: 50%;
@@ -16,6 +17,7 @@
 .details {
   color: #72bcae;
   font-weight: 700;
+  margin: 0px;
 }
 .title {
   color: #858585;
@@ -25,7 +27,7 @@
   font-weight: 300;
 }
 .bedbath {
-  font-size: 13px;
+  font-size: 16px;
   color: #72bcae;
   font-weight: 600;
 }
@@ -33,19 +35,33 @@
   font-size: 16px;
   color: #adadad;
   font-weight: 500;
+  text-align: justify;
 }
+/* .btnRent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #72bcae;
+  border-radius: 7px;
+  color: #fff;
+  width: 100%;
+} */
 .btnRent {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #e6f6f3;
-  border-radius: 10%;
-  color: #72bcae;
+  background-color: #72bcae !important;
+  border-radius: 10px !important;
+  color: #fff !important;
   margin: 4px;
+  width: 100%;
 }
-.btnRent > div {
+.btnDetails > div {
   margin-left: 6px;
+  font-weight: 400;
+  width: 100%;
 }
 .rentedUser {
   display: flex;
@@ -58,4 +74,56 @@
   color: #fff;
   border-radius: 10px;
   font-size: 19px;
+}
+.detINFO {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0px;
+  margin-top: 10px;
+}
+.fa-phone,
+.fa-id-badge,
+.fa-money-bill-wave-alt {
+  font-size: 11px;
+  margin-right: 6px;
+  color: #7f8c8d;
+}
+.fa-chart-area {
+  margin-right: 6px;
+}
+.detSecAD {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 10px;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+}
+.priceEstidiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.btspriceEstidiv {
+  color: #30336b;
+}
+.priceEstomon {
+  font-size: 27px;
+  color: #30336b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.monprice {
+  color: #72bcae;
+  font-size: 39px;
+}
+.fa-calendar-times {
+  font-size: 18px;
+  margin-right: 9px;
+}
+.fa-calendar-alt {
+  margin-right: 9px;
+  margin-left: 70px;
 }

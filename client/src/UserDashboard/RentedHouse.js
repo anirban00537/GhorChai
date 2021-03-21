@@ -77,7 +77,9 @@ const RentedHouse = () => {
                 id="button-addon2"
                 onClick={() => {
                   complains(m1._id, complain);
+                  handleClose();
                   rentedHouse();
+                  setComplain({ name: "renter", complains: "" });
 
                   // handleClose();
                 }}

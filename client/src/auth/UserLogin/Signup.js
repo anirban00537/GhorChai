@@ -14,7 +14,6 @@ const Signup = () => {
     nid: "",
     phone: "",
     sex: "Male",
-
     photo: "",
   });
   const history = useHistory();
