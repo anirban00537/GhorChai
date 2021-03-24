@@ -16,12 +16,26 @@
   width: 200px;
   height: 40px;
 }
+.mainfileser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  height: 140px;
+  /* padding-top: 2px; */
+  /* border: 1px solid rgb(236, 236, 236); */
+  padding: 10px;
+  cursor: pointer;
+  padding-right: 30px;
+  padding-left: 30px;
+}
 .btn_Search {
   background-color: #72bcae;
   color: #fff;
 }
 .ssrchFld {
   width: 100%;
+  margin-right: 90px;
   display: flex;
   flex-direction: column;
 }

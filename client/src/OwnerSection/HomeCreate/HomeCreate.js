@@ -1,6 +1,7 @@
 import "./HomeCreate.css";
 import FileBase from "react-file-base64";
 import { useEffect, useState } from "react";
+import moment from "moment";
 import { deleteHouse, postHome } from "../../api/home";
 import { useSelector, useDispatch } from "react-redux";
 import { Button, Modal } from "react-bootstrap";
@@ -12,6 +13,7 @@ import {
 } from "../../features/actions/Home";
 import { Link, useHistory } from "react-router-dom";
 import emptyImage from "./undraw_blank_canvas_3rbb.png";
+
 const HomeCreate = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -76,14 +78,17 @@ const HomeCreate = () => {
     <div className="mainOwnerHomeCreate">
       <div className="leftOwner">
         <form onSubmit={handelSubmit}>
-          <div className="loginName">
+          <div className="homCrName">
             <i className="fas fa-warehouse"></i>
             <label htmlFor="exampleInputEmail1" className="NameTitledash">
               Add A home
             </label>
           </div>
           <div className="form-group addHomeWidth">
-            <label htmlFor="exampleInputTitle"> Title</label>
+            <label htmlFor="exampleInputTitle" className="details">
+              {" "}
+              Title
+            </label>
             <input
               type="text"
               className="form-control "
@@ -97,7 +102,10 @@ const HomeCreate = () => {
             />
           </div>
           <div className="form-group addHomeWidth">
-            <label htmlFor="exampleInputTitle"> Description</label>
+            <label htmlFor="exampleInputTitle" className="details">
+              {" "}
+              Description
+            </label>
             <textarea
               type="text"
               className="form-control "
@@ -111,7 +119,10 @@ const HomeCreate = () => {
             ></textarea>
           </div>
           <div className="form-group addHomeWidth">
-            <label htmlFor="exampleInputEmail1"> Address</label>
+            <label htmlFor="exampleInputEmail1" className="details">
+              {" "}
+              Address
+            </label>
             <input
               type="text"
               className="form-control "
@@ -125,7 +136,10 @@ const HomeCreate = () => {
             />
           </div>
           <div className="form-group addHomeWidth">
-            <label htmlFor="exampleInputEmail1"> Add Photo (Atlest 5)</label>
+            <label htmlFor="exampleInputEmail1" className="details">
+              {" "}
+              Add Photo (Atlest 5)
+            </label>
             <FileBase
               type="file"
               multipla={false}
@@ -135,7 +149,10 @@ const HomeCreate = () => {
           </div>
 
           <div className="form-group addHomeWidth">
-            <label htmlFor="exampleInputEmail1"> Price</label>
+            <label htmlFor="exampleInputEmail1" className="details">
+              {" "}
+              Price
+            </label>
             <input
               type="number"
               className="form-control "
@@ -149,7 +166,9 @@ const HomeCreate = () => {
             />
           </div>
           <div class="form-group addHomeWidth">
-            <label for="exampleFormControlSelect1">Area</label>
+            <label for="exampleFormControlSelect1" className="details">
+              Area
+            </label>
             <select
               class="form-control"
               id="exampleFormControlSelect1"
@@ -170,7 +189,9 @@ const HomeCreate = () => {
             </select>
           </div>
           <div className="form-group addHomeWidth">
-            <label htmlFor="exampleInputEmail1">Rooms</label>
+            <label htmlFor="exampleInputEmail1" className="details">
+              Rooms
+            </label>
             <input
               type="text"
               className="form-control "
@@ -184,7 +205,9 @@ const HomeCreate = () => {
             />
           </div>
           <div className="form-group addHomeWidth">
-            <label htmlFor="exampleInputEmail1">Phone Number</label>
+            <label htmlFor="exampleInputEmail1" className="details">
+              Phone Number
+            </label>
             <input
               type="text"
               className="form-control "
@@ -277,12 +300,17 @@ const HomeCreate = () => {
                   <img className="innerImg" src={m.photo[0]} />
                 </div>
                 <div className="titleDemoLittle">
-                  {m.currentlyRenting ? (
-                    <p className="rentedOwner">Rented</p>
-                  ) : (
-                    <p className="NotrentedOwner">Not Rented</p>
-                  )}
-                  <p>{m.title}</p>
+                  <div className="detTimeclass">
+                    {m.currentlyRenting ? (
+                      <p className="rentedOwner">Rented</p>
+                    ) : (
+                      <p className="NotrentedOwner">Not Rented</p>
+                    )}
+                    <p className="homeCreTitle">{m.title}</p>
+                    <p className="timeClass">
+                      {moment(m.createdAt).startOf("hour").fromNow()}
+                    </p>
+                  </div>
                 </div>
                 <div className="btn_cover">
                   <button

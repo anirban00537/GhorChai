@@ -1,3 +1,38 @@
+.instractionTop {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 90px;
+  padding: 30px;
+  border: 1px solid rgb(236, 236, 236) !important;
+  margin-bottom: 30px;
+  background: #5c258d;
+  background: linear-gradient(to right, #4389a2, #5c258d);
+}
+.iconDetCreA {
+  display: flex;
+  width: 100%;
+  font-size: 30px;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+.instractionTop > p {
+  font-size: 12px;
+  color: #fff;
+}
+.instractionTop > h5 {
+  font-size: 22px;
+  font-weight: 500;
+  color: #fff;
+}
+.instractionTop > h1 {
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
 .mainOwnerHomeCreate {
   width: 100%;
   height: 100vh;
@@ -5,28 +40,55 @@
   display: flex;
   flex-direction: row;
 }
-
+.homeCreTitle {
+  font-size: 18px;
+  margin: 0px;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  width: 20em;
+  margin-right: 5px;
+  font-weight: 500;
+  color: #ababac;
+}
 .leftOwner {
-  margin-top: 160px;
+  margin-top: 90px;
   display: flex;
   flex: 0.5 1;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
-  width: 100%;
+  width: 100% !important;
+  margin-left: 50px;
 }
 
 .rentedOwner {
-  background-color: #2ecc71;
+  background: #11998e;
+  background: linear-gradient(to right, #38ef7d, #11998e);
   color: #fff;
   width: 70px;
   font-size: 12px;
   text-align: center;
   border-radius: 5px;
   font-weight: 600;
+  margin: 0px;
 }
 .NotrentedOwner {
-  background-color: #ff7675;
+  margin: 0px;
+  background: #ff9966; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff5e62,
+    #ff9966
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff5e62,
+    #ff9966
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   color: #fff;
   width: 90px;
   font-size: 12px;
@@ -34,15 +96,43 @@
   border-radius: 5px;
   font-weight: 600;
 }
+.timeClass {
+  background-color: #8c7ae6;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0px;
+}
+.detTimeclass {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 100%;
+}
 .loginName {
   display: flex;
   justify-content: center;
+  border-radius: 9px;
   align-items: center;
+}
+.homCrName {
+  display: flex;
+  justify-content: center;
+  border-radius: 9px;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  border: 1px solid #eaeaea;
 }
 .fa-warehouse {
   font-size: 22px;
   margin-right: 11px;
-  color: #696b6b;
+  color: #ababac;
+  height: 100%;
+  margin-top: 4px;
 }
 
 .imageEmptyContainer {
@@ -60,11 +150,13 @@
   width: 100%;
   height: 100%;
   flex-direction: column;
-  margin-top: 90px;
+  /* margin-top: 90px; */
 }
 .addHomeWidth {
-  width: 400px !important;
-  margin: 1pc;
+  margin-top: 19px;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 19px;
 }
 .createLineByLine {
   display: flex;
@@ -72,12 +164,23 @@
 }
 .submittedHome {
   display: flex;
-  margin: 20px;
+  margin: 7px;
   justify-content: space-between;
   align-items: space-between;
+  /* background-color: #fbfdff; */
+  border: 1px solid #eaeaea;
+  padding: 20px;
+  border-radius: 10px;
 }
+
 .innerImg {
-  width: 160px;
+  width: 103px;
+}
+.photoSectionDash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 77px; */
 }
 .titleDemoLittle {
   font-size: 14px;
@@ -86,19 +189,25 @@
 }
 .NameTitledash {
   font-size: 33px;
-  color: #696b6b;
+  color: #ababac;
+
+  margin: 0px;
 }
 .btn_del {
-  color: #fff;
   background-color: #72bcae;
+  color: #fff;
   height: 30px;
-  width: 70px;
+  width: 100%;
+  font-weight: 500;
   margin: 2px;
 }
 .btn_cover {
-  margin: 10px;
+  /* margin: 10px; */
   margin-top: 0px;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  /* margin: 0px; */
 }

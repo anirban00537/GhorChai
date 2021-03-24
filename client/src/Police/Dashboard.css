@@ -1,5 +1,134 @@
 .policeDashboard {
   display: flex;
-  margin-top: 90px;
+
   flex-direction: column;
+  width: 100%;
+}
+.policeHomeItem {
+  border: 1px solid rgb(228, 228, 228);
+  margin: 2px;
+  width: 100%;
+  padding: 6px;
+  padding-left: 17px;
+  display: flex;
+  background-color: #f7f7f7;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+.homePoliceTitle {
+  /* color: rgb(56, 51, 73); */
+  font-size: 16px;
+  font-weight: 500;
+  color: #858585;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  width: 704px;
+}
+.homePoliceTitlearea {
+  font-size: 16px;
+  font-weight: 500;
+  color: #858585;
+}
+.policeHomeItem > p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: 15px;
+}
+.PoliceDiv {
+  margin-left: 30px;
+  justify-content: flex-start;
+}
+.PoliceDivtitle {
+  margin: 0px;
+  font-weight: 600;
+  columns: #34495e;
+}
+.imgPolicea {
+  width: 50px;
+  margin-right: 10px;
+}
+.policeHomeItem > p {
+  font-size: 14px;
+}
+.policeFirst {
+  display: flex;
+
+  flex-direction: row;
+}
+.policeSecond {
+  display: flex;
+  padding-top: 40px;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 100px;
+}
+.mainPolice {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.midCover {
+  display: flex;
+  width: 100%;
+  display: 0.5;
+  flex-direction: row;
+  height: 70% !important;
+}
+.mainpoliceText {
+  display: flex;
+  display: 0.5;
+  flex-direction: row;
+  padding-top: 70px;
+  padding-left: 20px;
+  width: 100%;
+  justify-content: center;
+  background-color: #34495e;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #192a56,
+    #34495e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #353b48,
+    #494369
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.mainpoliceTextfirst {
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainpoliceTextsecond {
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.h3Total {
+  color: #fff;
+  font-weight: 600;
+}
+.h1color {
+  color: #fff;
+  margin: 0px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 49px;
+  border-radius: 50%;
+  border: 7px solid #1abc9c;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  padding-top: 10px;
 }

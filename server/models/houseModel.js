@@ -45,7 +45,10 @@ const HouseSchema = new mongoose.Schema({
   status: {
     type: String,
   },
-
+  createdAt: {
+    type: Date,
+    default: new Date(),
+  },
   currentlyRenting: {
     type: mongoose.Schema.Types.ObjectId,
 

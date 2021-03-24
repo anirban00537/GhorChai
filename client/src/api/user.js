@@ -8,3 +8,4 @@ export const signin = (email, password) =>
 export const signup = (auth) => axios.post(url + "signup", auth);
 
 export const userInfo = (id) => axios.get(url + `getuser/${id}`);
+export const getallusers = () => axios.get(url + `getallusers`);

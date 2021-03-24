@@ -67,7 +67,7 @@ const Search = () => {
       ) : (
         <div className="ssrchFld">
           {allhomes.map((h) => (
-            <div className="mainfile ">
+            <div className="mainfileser ">
               <div className="homeImageContainer">
                 <img key={h.nid} className="homeImage" src={h.photo[0]} />
               </div>
@@ -75,16 +75,15 @@ const Search = () => {
                 <div className="priceAndTitle">
                   <div className=" titleWithMoney">
                     <div className="titleHome">{h.title}</div>
-                    <div className=" priceHome">{h.price}TK</div>
                   </div>
-                  <div className="addressArea">
-                    <p className="place ">{h.address}</p>
-                    <p className=" bedroomS">{h.area}</p>
-                  </div>
+                  {/* <div className="addressArea">
+                      <p className="place ">{h.address}</p>
+                      <p className=" bedroomS">{h.area}</p>
+                    </div> */}
 
-                  <div className="">
+                  <div className="btnHomeItem">
                     <button
-                      className="btnDetails btn btn-"
+                      className="btnDetails btn btn-sm"
                       onClick={() => {
                         toDetails(h);
                       }}
@@ -93,6 +92,9 @@ const Search = () => {
 
                       <div> Details</div>
                     </button>
+                    <p className="place ">{h.address}</p>
+                    <p className=" bedroomS">{h.area}</p>
+                    <div className=" priceHome">{h.price}TK</div>
                   </div>
                 </div>
               </div>

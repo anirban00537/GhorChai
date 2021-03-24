@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import emptyImage from "./undraw_blank_canvas_3rbb.png";
 import { complains } from "../api/home";
+import moment from "moment";
+// moment(testDate).format('MM/DD/YYYY');
+
 const RentedHouse = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -112,6 +115,9 @@ const RentedHouse = () => {
                 </div>
                 <div className="titleDemoLittleMod">
                   <p>{m.title}</p>
+                  <p className="createdAtDash">
+                    {moment(m.createdAt).startOf("hour").fromNow()}
+                  </p>
                 </div>
                 <div className="btn_cover_yo">
                   <div className="btn_coverthis">

@@ -2,13 +2,13 @@ const HomeModel = require("../models/HouseModel.js");
 const user = require("../models/users.js");
 exports.getOwnerHome = getOwnerHome = async (req, res) => {
   const { id } = req.params;
-  const home = await HomeModel.find({ homeOwner: id });
+  const home = await HomeModel.find({ homeOwner: id }).sort({ _id: -1 });
   res.json(home);
 };
 
 exports.currentlyRentingInfo = currentlyRentingInfo = async (req, res) => {
   const { currentlyRenting } = req.params;
-  const users = await user.findById(currentlyRenting);
+  const users = await user.findById(currentlyRenting).sort({ _id: -1 });
   console.log("calling user");
   res.json(users);
 };

@@ -20,6 +20,7 @@ import { FetchUserWithoutLogin } from "./Function/Function";
 import { useSelector } from "react-redux";
 import OwnerDashboard from "./OwnerSection/OwnerDashboard";
 import Profile from "./OwnerSection/Complain/Profile";
+import policeDetails from "./Police/Details";
 import HomeItemDashboard from "./OwnerSection/HomeCreate/HomeItemDashboard";
 // function Routers() {
 //   const history = useHistory();
@@ -99,6 +100,7 @@ function Routers2() {
             <Route path="/ownerlogin" component={OwnerLogin} />
             <Route path="/ownersignup" component={OwnerSignup} />
             <Route exact path="/" component={DashboardPolice} />
+            <Route path="/details" component={policeDetails} />
           </Switch>
         );
       default:

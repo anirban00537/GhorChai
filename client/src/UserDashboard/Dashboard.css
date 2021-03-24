@@ -2,6 +2,7 @@
   border-radius: 50%;
   width: 120px;
   height: 120px;
+  border: 6px solid #88d2c3af;
 }
 .containerDash {
   margin-top: 80px;
@@ -12,10 +13,22 @@
   display: flex;
 }
 .titleDemoLittleMod {
-  font-size: 14px;
-  color: #858585;
+  font-size: 12px;
+  color: #585858;
   margin-left: 10px;
   width: 100%;
+  font-weight: 500;
+
+  padding-right: 20px;
+  padding-left: 10px;
+}
+.titleDemoLittleMod > p {
+  margin: 0px;
+  color: #95a5a6;
+}
+.createdAtDash {
+  color: #72bcae !important;
+  font-weight: 700;
 }
 .ownerChat {
   width: 100%;
@@ -50,7 +63,7 @@
   justify-content: center;
 }
 .innerImgcstm {
-  width: 128px;
+  width: 88px;
 }
 .btn_coverthis {
   /* margin: 10px; */
@@ -61,17 +74,21 @@
 }
 .btn_complain {
   color: white;
-  background-color: #ff7979;
+  background-color: #72bcae2a;
+  color: #72bcae;
+  font-weight: 500;
   height: 30px;
   margin: 2px;
+  width: 100%;
 }
 .submittedHomethis {
   display: flex;
   margin-top: 10px;
   justify-content: space-between;
   align-items: space-between;
-  border-bottom: 1px solid rgb(236, 236, 236);
-  padding-bottom: 17px;
+  border: 1px solid rgb(236, 236, 236);
+  padding: 17px;
+  background-color: #f9fbfa;
 }
 .titleColor {
   color: #72bcae;

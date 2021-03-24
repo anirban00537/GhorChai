@@ -105,24 +105,26 @@ const HomeItemDashboard = () => {
                     </div>
                   </Modal.Body>
                 </Modal>
-                <button
-                  className="btn btnRent "
-                  onClick={() => {
-                    rentHome();
-                  }}
-                >
-                  <i className="fas fa-bed"></i>
-                  <div>Rent now</div>
-                </button>
-                <button
-                  className="btn btnRent "
-                  onClick={() => {
-                    handleShow();
-                  }}
-                >
-                  <i class="fas fa-tags"></i>
-                  <div>Price Estimations</div>
-                </button>
+                <div className="detBtnSec">
+                  <button
+                    className="btn btnRent "
+                    onClick={() => {
+                      rentHome();
+                    }}
+                  >
+                    <i className="fas fa-bed"></i>
+                    <div>Rent now</div>
+                  </button>
+                  <button
+                    className="btn btnRent "
+                    onClick={() => {
+                      handleShow();
+                    }}
+                  >
+                    <i class="fas fa-tags"></i>
+                    <div>Price Estimations</div>
+                  </button>
+                </div>
               </div>
             ) : (
               <div>
@@ -147,7 +149,7 @@ const HomeItemDashboard = () => {
               </div>
               <div className="col-3">
                 <p className="detINFO">
-                  <i class="fas fa-id-badge"></i>House No
+                  <i class="fas fa-id-badge"></i>Room
                 </p>
                 <p className="bedbath">{nid}</p>
               </div>

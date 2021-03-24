@@ -1,10 +1,12 @@
-import "./homeItemDashboard.css";
-import Navbar from "../Navbar/Navbar";
-import { Button, Modal } from "react-bootstrap";
-import { useLocation, useHistory } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { getcurrentlyRenting } from "../../api/home";
+import "./Details.css";
 
+import Navbar from "./Navbar";
+import axios from "axios";
+
+import { Button, Modal } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { useLocation, useHistory } from "react-router-dom";
+import { getcurrentlyRenting } from "../api/home";
 const HomeItemDashboard = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
