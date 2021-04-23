@@ -23,11 +23,17 @@ const Navbar = () => {
         id="navbarTogglerDemo01"
       >
         <div className="navCenterItem justify-content-end ">
-          <ul className="nav justify-content-center">
+          <ul className="nav justify-content-center ">
+            <li className="nav-item brNav">
+              <i class="fab fa-dashcube"></i>
+              <Link className=" nav-link" to="/">
+                Dashboard
+              </Link>
+            </li>
             <li className="nav-item brNav">
               <i class="fas fa-sticky-note"></i>
-              <Link className="nav-link" to="/">
-                Dashboard
+              <Link className="nav-link" to="/profile">
+                Profile
               </Link>
             </li>
             <li

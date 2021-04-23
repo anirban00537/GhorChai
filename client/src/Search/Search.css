@@ -16,6 +16,9 @@
   width: 200px;
   height: 40px;
 }
+.imageEmptySearch {
+  width: 450px;
+}
 .mainfileser {
   display: flex;
   justify-content: center;
@@ -35,7 +38,83 @@
 }
 .ssrchFld {
   width: 100%;
-  margin-right: 90px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.mainfileSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  height: 140px;
+  /* padding-top: 2px; */
+  border: 1px solid rgb(236, 236, 236);
+  padding: 10px;
+  cursor: pointer;
+  width: 100;
+  background-color: #f9fbfa;
+  width: 667px;
+}
+.containerSearch {
+  width: 100%;
+}
+.FormContainerSearch {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 37px;
+}
+.imageEmpty {
+  width: 430px;
+  margin-top: 90px;
+}
+
+@media screen and (max-width: 900px) {
+  .inputSearchBox {
+    width: 199px;
+    height: 40px;
+    border: 1px solid #e2e2e2;
+  }
+  .inputSection {
+    margin-top: 90px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .imageEmpty {
+    width: 250px;
+  }
+  .FormContainerSearch {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 37px;
+  }
+  .containerSearch {
+    width: 100%;
+  }
+
+  .mainfileSearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    height: 90px;
+    /* padding-top: 2px; */
+    border: 1px solid rgb(236, 236, 236);
+    padding: 10px;
+    cursor: pointer;
+    background-color: #f9fbfa;
+    width: 319px;
+  }
+  .imageEmptySearch {
+    width: 128px;
+  }
 }

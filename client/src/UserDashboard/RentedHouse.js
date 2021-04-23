@@ -96,27 +96,26 @@ const RentedHouse = () => {
         ""
       )}
 
-      <div className="rightOwnerrent">
+      <div className="">
         {house.length < 1 ? (
-          <div className="imageEmptyContainer">
-            {" "}
-            <img src={emptyImage} className="imageEmpty" />
-            <h2>No House Is Rented Yet</h2>
+          <div className="imageEmptyContainerMore">
+            <img src={emptyImage} className="imageEmptyNess" />
+            <h2 className="notRentedYEt">No House Is Rented Yet</h2>
           </div>
         ) : (
           <div>
             {house.map((m) => (
               <div className="submittedHomethis">
-                <div className="photoSectionDash">
+                <div className="photoSectionDashLLL">
                   {/* {m.photo.map((im) => (
                 <img className="innerImg" src={im} />
               ))} */}
-                  <img className="innerImgcstm" src={m.photo[0]} />
+                  <img className="innerImgcstm homeImage" src={m.photo[0]} />
                 </div>
                 <div className="titleDemoLittleMod">
                   <p>{m.title}</p>
                   <p className="createdAtDash">
-                    {moment(m.createdAt).startOf("hour").fromNow()}
+                    {moment(m.createdAt).format("dddd")}
                   </p>
                 </div>
                 <div className="btn_cover_yo">

@@ -61,3 +61,16 @@
   color: #646464;
   font-weight: 500px;
 }
+
+@media screen and (max-width: 900px) {
+  .brNav {
+    border-right: 0px solid rgb(221, 221, 221);
+  }
+  .fas {
+    font-size: 9px;
+  }
+
+  .fab {
+    font-size: 9px;
+  }
+}

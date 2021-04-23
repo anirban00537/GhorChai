@@ -1,9 +1,14 @@
 .homeImage {
   display: flex;
-  width: 132px;
+  height: 59px;
 }
 .homehouseMAin {
   display: flex;
+  flex-direction: row;
+}
+.rentContainers {
+  display: flex;
+  flex: 0.6;
 }
 .para {
   margin-left: 60px;
@@ -37,10 +42,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 161px;
-  margin-right: 16px;
+  /* height: 59px; */
+  margin-right: 9px;
   /* margin-left: 0px; */
-  margin-top: 7px;
+  /* margin-top: 7px; */
+  width: 100%;
+  height: 100%;
 }
 .addressArea {
   display: flex;
@@ -60,14 +67,16 @@
   border: 1px solid rgb(236, 236, 236);
   padding: 10px;
   cursor: pointer;
-  padding-right: 30px;
-  padding-left: 30px;
+  width: 100;
+  /* padding-right: 30px;
+  padding-left: 30px; */
   background-color: #f9fbfa;
 }
 .btnHomeItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -180,10 +189,10 @@
   width: 30em;
   margin-right: 5px;
 }
-.titleWithMoney {
+.titleWithMoneyyy {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 .priceHome {
   font-size: 18px;
@@ -191,7 +200,7 @@
   font-weight: 700;
 }
 
-.place {
+.placeccc {
   color: #9c9c9c;
   font-weight: 400;
   /* margin-top: 10px; */
@@ -200,9 +209,10 @@
   white-space: nowrap;
   display: block;
   overflow: hidden;
-  /* width: 30em; */
+  width: 20em;
   font-size: 12px;
 }
+
 .clickHome {
   width: 350px;
   margin-top: 100px;
@@ -262,4 +272,155 @@
 
   justify-content: flex-start;
   margin-top: 15px;
+}
+@media screen and (max-width: 900px) {
+  .homehouseMAin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .homeImage {
+    display: flex;
+    height: 49px;
+  }
+  .mainfile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    height: 89px;
+    /* padding-top: 2px; */
+    border: 1px solid rgb(236, 236, 236);
+    /* padding: 10px; */
+    cursor: pointer;
+    /* padding-right: 30px; */
+    /* padding-left: 30px; */
+    background-color: #f9fbfa;
+    width: 349px;
+  }
+  .titleHome {
+    font-size: 11px;
+    font-weight: 600;
+    color: #585858;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    width: 18em;
+    margin-right: 5px;
+  }
+  .placeccc {
+    display: none;
+  }
+  .priceHome {
+    font-size: 12px;
+    color: #9c9c9c;
+    font-weight: 700;
+  }
+  .btnDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #72bcae;
+    border-radius: 10%;
+    color: #fff;
+    font-size: 8px;
+    font-weight: 300;
+  }
+  .bedroomS {
+    font-size: 9px;
+    color: #fff;
+    /* margin-top: 4px; */
+    font-weight: 400;
+    background-color: #9c9c9c;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 4px;
+    margin-bottom: 0px;
+  }
+  .btnHomeItem {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .bannerTop > p {
+    font-size: 9px;
+    color: #fff;
+  }
+  .bannerTop {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 10px;
+    border: 1px solid rgb(236, 236, 236) !important;
+    margin-bottom: 30px;
+    background: #8360c3;
+    background: linear-gradient(to right, #2ebf91, #8360c3);
+  }
+  .bannerTop > h5 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+  }
+  .nav-link {
+    font-size: 10px;
+    margin: 0px;
+    padding: 4px;
+  }
+  .adtime {
+    font-size: 7px;
+    background-color: #5352ed;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #fff;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .adtk {
+    font-size: 7px;
+    background-color: #ff6b81;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #fff;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .adRoom {
+    font-size: 7px;
+    background-color: #1e90ff;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #fff;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .adareas {
+    font-size: 7px;
+    background-color: #192a56;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #fff;
+    padding: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .homeImageContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* height: 59px; */
+    margin-right: 9px;
+    /* margin-left: 0px; */
+    /* margin-top: 7px; */
+    width: 30%;
+    height: 100%;
+  }
 }

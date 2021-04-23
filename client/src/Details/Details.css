@@ -3,8 +3,15 @@
   flex-wrap: wrap;
   padding: 5px;
   justify-content: center;
+  align-items: center;
   margin-top: 50px;
-  margin-bottom: 51px;
+
+  flex: 0.4;
+  flex-direction: column;
+}
+.mainDETContainer {
+  display: flex;
+  width: 100%;
 }
 .item {
   width: 50%;
@@ -15,15 +22,21 @@
   display: flex;
 }
 .DetailsContainer {
+  display: flex;
   margin-top: 50px;
+  flex: 0.6;
+  flex-direction: column;
+  margin: 20px;
 }
 .details {
   color: #72bcae;
   font-weight: 700;
   margin: 0px;
 }
+
 .title {
   color: #858585;
+  font-size: 22px;
 }
 .address {
   color: #858585;
@@ -128,4 +141,39 @@
 .fa-calendar-alt {
   margin-right: 9px;
   margin-left: 70px;
+}
+@media screen and (max-width: 900px) {
+  .mainDETContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .imgContainer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex: 0.4;
+    flex-direction: column;
+  }
+
+  .title {
+    color: #858585;
+    font-size: 15px;
+  }
+  .detINFO {
+    font-size: 2px;
+    font-weight: 500;
+    margin: 0px;
+    margin-top: 10px;
+  }
+  .DetailsContainer {
+    display: flex;
+    margin-top: 2px;
+    flex: 0.6;
+    flex-direction: column;
+    margin: 20px;
+  }
 }

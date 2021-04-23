@@ -129,7 +129,7 @@ function Routers2() {
 function App() {
   FetchUserWithoutLogin();
   return (
-    <div>
+    <div className="rootBase">
       <Router>
         <Routers2 />
       </Router>

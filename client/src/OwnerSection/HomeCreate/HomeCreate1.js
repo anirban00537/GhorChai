@@ -19,9 +19,8 @@ const HomeCreate = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [m1, setM1] = useState();
+  const [imgUrl, setImgUrl] = useState();
   const [img, setImg] = useState([]);
-  // const [image, setImage] = useState("");
-
   const dispatch = useDispatch();
   const history = useHistory();
   const homeData = useSelector((state) => state.home);
@@ -41,19 +40,19 @@ const HomeCreate = () => {
     name: "owner",
     complains: "",
   });
-  const postCloudImage = (image) => {
+
+  const postCloudImage = () => {
     const data = new FormData();
-    data.append("file", image);
+    data.append("file", imgUrl);
     data.append("upload_preset", "rentahome");
     data.append("cloud_name", "dfvtfwt6f");
     fetch("https://api.cloudinary.com/v1_1/dfvtfwt6f/image/upload", {
-      method: "post",
+      method: "POST",
       body: data,
     })
       .then((res) => res.json())
       .then((data) => {
-        setImg([...img, data.url]);
-        console.log(img);
+        console.log(data);
       })
       .catch((err) => {
         console.log(err);
@@ -96,13 +95,16 @@ const HomeCreate = () => {
   return (
     <div className="mainOwnerHomeCreate">
       <div className="leftOwner">
-        <form className="leftOwnerForm" onSubmit={handelSubmit}>
+        <form onSubmit={handelSubmit}>
           <div className="homCrName">
             <i className="fas fa-warehouse"></i>
-            <label className="NameTitledash">Add A home</label>
+            <label htmlFor="exampleInputEmail1" className="NameTitledash">
+              Add A home
+            </label>
           </div>
-          <div className="addHomeWidth">
+          <div className="form-group addHomeWidth">
             <label htmlFor="exampleInputTitle" className="details">
+              {" "}
               Title
             </label>
             <input
@@ -162,20 +164,22 @@ const HomeCreate = () => {
               value={img}
               onDone={({ base64 }) => setImg([...img, base64])}
             /> */}
-
             <input
               type="file"
+              className="form-control"
+              placeholder="Rent Amount"
+              value={home.price}
               onChange={(e) => {
-                // setImage(e.target.files[0]);
-                postCloudImage(e.target.files[0]);
-                // console.log(e.target.files[0]);
+                // setImg([...img, e.target.files]);
+                // console.log(img);
+                setImgUrl(e.target.files);
+                postCloudImage();
               }}
             />
           </div>
 
           <div className="form-group addHomeWidth">
             <label htmlFor="exampleInputEmail1" className="details">
-              {" "}
               Price
             </label>
             <input
@@ -319,9 +323,6 @@ const HomeCreate = () => {
             {homeData.map((m) => (
               <div className="submittedHome">
                 <div className="photoSectionDash">
-                  {/* {m.photo.map((im) => (
-                <img className="innerImg" src={im} />
-              ))} */}
                   <img className="innerImg" src={m.photo[0]} />
                 </div>
                 <div className="titleDemoLittle">

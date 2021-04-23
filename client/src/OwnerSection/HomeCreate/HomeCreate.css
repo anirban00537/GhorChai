@@ -10,6 +10,7 @@
   background: #5c258d;
   background: linear-gradient(to right, #4389a2, #5c258d);
 }
+
 .iconDetCreA {
   display: flex;
   width: 100%;
@@ -19,7 +20,7 @@
   color: #fff;
 }
 .instractionTop > p {
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
 }
 .instractionTop > h5 {
@@ -54,14 +55,18 @@
   color: #ababac;
 }
 .leftOwner {
-  margin-top: 90px;
   display: flex;
   flex: 0.5 1;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  height: 1000px;
   width: 100% !important;
-  margin-left: 50px;
+}
+.leftOwnerForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .rentedOwner {
@@ -151,6 +156,8 @@
   height: 100%;
   flex-direction: column;
   /* margin-top: 90px; */
+  align-items: center;
+  justify-content: flex-start;
 }
 .addHomeWidth {
   margin-top: 19px;
@@ -165,16 +172,16 @@
 .submittedHome {
   display: flex;
   margin: 7px;
+  width: 100%;
   justify-content: space-between;
   align-items: space-between;
-  /* background-color: #fbfdff; */
   border: 1px solid #eaeaea;
   padding: 20px;
   border-radius: 10px;
 }
 
 .innerImg {
-  width: 103px;
+  width: 104px;
 }
 .photoSectionDash {
   display: flex;
@@ -210,4 +217,126 @@
   flex-direction: column;
   height: 100%;
   /* margin: 0px; */
+}
+
+@media screen and (max-width: 900px) {
+  .mainOwnerHomeCreate {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .leftOwner {
+    margin-top: 90px;
+    display: flex;
+    flex: 0.5 1;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+    width: 100% !important;
+  }
+  .addHomeWidth {
+    margin-top: 19px;
+    width: 80%;
+    height: 100%;
+    margin-bottom: 19px;
+  }
+  .NameTitledash {
+    font-size: 15px;
+    color: #ababac;
+    width: 110px;
+    margin: 11px;
+    padding: 0px;
+  }
+  .homCrName {
+    display: flex;
+    justify-content: center;
+    border-radius: 9px;
+    height: 100%;
+    width: 80%;
+    align-items: center;
+    border: 1px solid #eaeaea;
+  }
+  .imageEmptyContainer {
+    display: flex;
+    height: 900px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .instractionTop > h5 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+  }
+  .instractionTop > p {
+    font-size: 11px;
+    color: #fff;
+  }
+  .submittedHome {
+    display: flex;
+    margin: 7px;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: space-between;
+    border: 1px solid #eaeaea;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .innerImg {
+    width: 60px;
+  }
+  .homeCreTitle {
+    font-size: 8px;
+    margin: 0px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    width: 12em;
+    margin-right: 5px;
+    font-weight: 500;
+    color: #ababac;
+  }
+  .timeClass {
+    background-color: #8c7ae6;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 11px;
+    margin: 0px;
+  }
+  .btn_del {
+    background-color: #72bcae;
+    color: #fff;
+    height: 23px;
+    width: 100%;
+    font-weight: 500;
+    margin: 2px;
+    font-size: 11px;
+  }
+  .NotrentedOwner {
+    margin: 0px;
+    background: #ff9966;
+    background: linear-gradient(to right, #ff5e62, #ff9966);
+    color: #fff;
+    width: 63px;
+    font-size: 10px;
+    text-align: center;
+
+    border-radius: 5px;
+    font-weight: 600;
+  }
+  .detTimeclass {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 100%;
+  }
 }

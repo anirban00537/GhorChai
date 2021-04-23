@@ -6,6 +6,64 @@
 .mainPRoOwner {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   margin-top: 70px;
+  width: 100%;
+}
+.DetSec {
+  width: 400px;
+}
+.dpInfoProfile {
+  height: 100%;
+  width: 100%;
+}
+.personel {
+  font-size: 27px;
+}
+.mainProfile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.insec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  margin: 3px;
+}
+@media screen and (max-width: 900px) {
+  .mainPRoOwner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 133px;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .dpInfoProfile {
+    height: 100%;
+    width: 100%;
+  }
+  .imageDp {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    border: 6px solid #88d2c3af;
+  }
+  .insec {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    margin: 7px;
+  }
+  .personel {
+    font-size: 23px;
+  }
 }

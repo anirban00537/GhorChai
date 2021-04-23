@@ -5,12 +5,41 @@
   border: 6px solid #88d2c3af;
 }
 .containerDash {
-  margin-top: 80px;
-  margin-left: 80px;
-  width: 93%;
+  width: 100%;
 }
 .btn_cover_yo {
   display: flex;
+}
+.mainDashUSer {
+  display: flex;
+}
+.titleor {
+  color: #72bcae;
+}
+.leftDashuser {
+  display: flex;
+  flex: 0.5 1;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 103px;
+}
+.proSecInFo {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  border-radius: 10px;
+  border: 1px solid rgb(231, 231, 231);
+  padding: 10px;
+  margin: 10px;
+
+  justify-content: center;
+}
+.rightDashuser {
+  display: flex;
+  flex: 0.5 1;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 .titleDemoLittleMod {
   font-size: 12px;
@@ -25,10 +54,12 @@
 .titleDemoLittleMod > p {
   margin: 0px;
   color: #95a5a6;
+  font-size: 14px;
 }
 .createdAtDash {
   color: #72bcae !important;
   font-weight: 700;
+  font-size: 33px;
 }
 .ownerChat {
   width: 100%;
@@ -58,11 +89,7 @@
   color: #fff;
   max-width: 70%;
 }
-.DetSec {
-  display: flex;
-  justify-content: center;
-}
-.innerImgcstm {
+.mgcstm {
   width: 88px;
 }
 .btn_coverthis {
@@ -72,6 +99,13 @@
   justify-content: flex-end;
   align-items: flex-start;
 }
+.photoSectionDashLLL {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  /* height: 77px; */
+}
+
 .btn_complain {
   color: white;
   background-color: #72bcae2a;
@@ -83,12 +117,13 @@
 }
 .submittedHomethis {
   display: flex;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   justify-content: space-between;
   align-items: space-between;
   border: 1px solid rgb(236, 236, 236);
   padding: 17px;
   background-color: #f9fbfa;
+  margin: 20px;
 }
 .titleColor {
   color: #72bcae;
@@ -112,9 +147,7 @@
   margin-bottom: 13px;
   width: 80%;
 }
-.dpInfo {
-  height: 100%;
-}
+
 .mes {
   color: #a6a6a6;
 }
@@ -127,4 +160,65 @@
 }
 .rent {
   display: flex;
+}
+.notRentedYEt {
+  font-size: 32px;
+  text-align: center;
+}
+.apiInfoUSerDash {
+  font-size: 18px;
+}
+.imageEmptyNess {
+  width: 424px;
+}
+.imageEmptyContainerMore {
+  display: flex;
+  height: 900px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.RentedHouseTitle {
+  margin-top: 90px;
+}
+@media screen and (max-width: 900px) {
+  .btn_complain {
+    color: white;
+    background-color: #72bcae2a;
+    color: #72bcae;
+    font-weight: 500;
+    height: 23px;
+    margin: 2px;
+    width: 100%;
+    font-size: 11px;
+  }
+  .mainDashUSer {
+    display: flex;
+    flex-direction: column;
+  }
+  .imageEmptyNess {
+    width: 184px;
+    margin: 30px;
+  }
+  .notRentedYEt {
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+  }
+  .imageDp {
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    border: 6px solid #88d2c3af;
+  }
+  .apiInfoUSerDash {
+    font-size: 15px;
+  }
+  .imageEmptyContainerMore {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }

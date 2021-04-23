@@ -8,6 +8,11 @@
   border: 1px solid rgb(221, 221, 221);
   border-radius: 20px;
 }
+.mainVnav {
+  display: flex !important;
+  align-items: center !important;
+  width: 100%;
+}
 .nav-link {
   color: #747474 !important;
   font-weight: 400 !important;
@@ -61,3 +66,16 @@
   color: #646464;
   font-weight: 500px;
 }
+.navbar-toggler-iconnnnnn {
+  color: rgb(87, 87, 87) !important;
+}
+.DotClass {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* @media screen and (max-width: 900px) {
+  .brandname {
+    display: none;
+  }
+} */

@@ -16,9 +16,7 @@ const Search = () => {
       state: { data: data },
     });
   };
-  // useEffect(() => {
-  //   onSub();
-  // }, []);
+
   const getHome = async (area) => {
     const { data } = await axios.get(
       `http://localhost:5000/user/searchHome/${area}`
@@ -34,8 +32,9 @@ const Search = () => {
   return (
     <div className="containerSearch">
       <Navbar />
-      <forn>
-        <div className="inputSection">
+
+      <div className="inputSection">
+        <forn className="FormContainerSearch">
           <input
             type="text"
             className="form-control inputSearchBox"
@@ -56,30 +55,32 @@ const Search = () => {
           >
             Search
           </button>
-        </div>
-      </forn>
+        </forn>
+      </div>
+
       {allhomes.length == 0 ? (
         <div className="imageEmptyContainer">
           {" "}
-          <img src={searchImage} className="imageEmpty" />
+          <img src={searchImage} className="imageEmptySearch" />
           <h2>No Home</h2>
         </div>
       ) : (
         <div className="ssrchFld">
           {allhomes.map((h) => (
-            <div className="mainfileser ">
+            <div
+              className="mainfileSearch  "
+              // onClick={() => {
+              //   setPara(h);
+              // }}
+            >
               <div className="homeImageContainer">
                 <img key={h.nid} className="homeImage" src={h.photo[0]} />
               </div>
               <div className="colDetails">
                 <div className="priceAndTitle">
-                  <div className=" titleWithMoney">
+                  <div className=" titleWithMoneyyy">
                     <div className="titleHome">{h.title}</div>
                   </div>
-                  {/* <div className="addressArea">
-                      <p className="place ">{h.address}</p>
-                      <p className=" bedroomS">{h.area}</p>
-                    </div> */}
 
                   <div className="btnHomeItem">
                     <button
@@ -92,7 +93,7 @@ const Search = () => {
 
                       <div> Details</div>
                     </button>
-                    <p className="place ">{h.address}</p>
+                    <p className="placeccc ">{h.address}</p>
                     <p className=" bedroomS">{h.area}</p>
                     <div className=" priceHome">{h.price}TK</div>
                   </div>

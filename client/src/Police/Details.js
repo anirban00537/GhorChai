@@ -51,16 +51,16 @@ const HomeItemDashboard = () => {
 
   return (
     <div className="">
-      <div>
+      <div className="container">
         <Navbar />
         <div className="container">
-          <div class="row">
+          <div class="mainDETContainer">
             <div class="col imgContainer">
               {photo.map((p) => (
                 <img className="col item" src={p} />
               ))}
             </div>
-            <div className="col DetailsContainer">
+            <div className=" DetailsContainer">
               <p className="details">Details</p>
               <h5 className="title">{title}</h5>
               <p className="address">

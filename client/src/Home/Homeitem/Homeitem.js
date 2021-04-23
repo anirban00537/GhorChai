@@ -44,13 +44,9 @@ const Homeitem = () => {
                 </div>
                 <div className="colDetails">
                   <div className="priceAndTitle">
-                    <div className=" titleWithMoney">
+                    <div className=" titleWithMoneyyy">
                       <div className="titleHome">{h.title}</div>
                     </div>
-                    {/* <div className="addressArea">
-                      <p className="place ">{h.address}</p>
-                      <p className=" bedroomS">{h.area}</p>
-                    </div> */}
 
                     <div className="btnHomeItem">
                       <button
@@ -63,7 +59,7 @@ const Homeitem = () => {
 
                         <div> Details</div>
                       </button>
-                      <p className="place ">{h.address}</p>
+                      <p className="placeccc ">{h.address}</p>
                       <p className=" bedroomS">{h.area}</p>
                       <div className=" priceHome">{h.price}TK</div>
                     </div>

@@ -37,58 +37,57 @@ const Dashboard = () => {
     <div class="">
       <Navbar />
       <div className="containerDash">
-        <div className="row">
-          <div className="col-5 dpInfo">
-            <div className="col DetSec">
+        <div className="mainDashUSer">
+          <div className=" leftDashuser ">
+            <div className=" ">
               <img src={userData.photo} className="imageDp" />
             </div>
-            <div className="col DetSec">
-              <h3>Personal Info</h3>
-            </div>
+            <h3 className="notRentedYEt">Personal Info</h3>
+
             {/* name */}
-            <div className="col">
-              <div className="row">
-                <h6 className="titleColor">Name</h6>
+            <div className="proSecInFo">
+              <div className="myDashInfo">
+                <h6 className="titleor">Name</h6>
               </div>
-              <div className="row">
-                <h5>{userData.name}</h5>
-              </div>
-            </div>
-            <div className="col">
-              <div className="row">
-                <h6 className="titleColor">Phone number</h6>
-              </div>
-              <div className="row">
-                <h5>{userData.phone}</h5>
+              <div className="">
+                <h5 className="apiInfoUSerDash">{userData.name}</h5>
               </div>
             </div>
-            <div className="col">
-              <div className="row">
-                <h6 className="titleColor">Gender</h6>
+            <div className="proSecInFo">
+              <div className="myDashInfo">
+                <h6 className="titleor">Phone number</h6>
               </div>
-              <div className="row">
-                <h5>{userData.sex}</h5>
-              </div>
-            </div>
-            <div className="col">
-              <div className="row">
-                <h6 className="titleColor">Address</h6>
-              </div>
-              <div className="row">
-                <h5>{userData.address}</h5>
+              <div className="">
+                <h5 className="apiInfoUSerDash">{userData.phone}</h5>
               </div>
             </div>
-            <div className="col">
-              <div className="row">
-                <h6 className="titleColor">NID Card Number</h6>
+            <div className="proSecInFo">
+              <div className="myDashInfo">
+                <h6 className="titleor">Gender</h6>
               </div>
-              <div className="row">
-                <h5>{userData.nid}</h5>
+              <div className="">
+                <h5 className="apiInfoUSerDash">{userData.sex}</h5>
+              </div>
+            </div>
+            <div className="proSecInFo">
+              <div className="myDashInfo">
+                <h6 className="titleor">Address</h6>
+              </div>
+              <div className="">
+                <h5 className="apiInfoUSerDash">{userData.address}</h5>
+              </div>
+            </div>
+            <div className="proSecInFo">
+              <div className="myDashInfo">
+                <h6 className="titleor">NID Card Number</h6>
+              </div>
+              <div className="">
+                <h5 className="apiInfoUSerDash">{userData.nid}</h5>
               </div>
             </div>
           </div>
-          <div className="col-7">
-            <h5>Rented House</h5>
+          <div className="rightDashuser">
+            <h5 className="RentedHouseTitle">Rented House</h5>
             <RentedHouse />
           </div>
         </div>

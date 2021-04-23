@@ -15,6 +15,9 @@ app.use(cors());
 const CONNECTION_URL =
   "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false";
 
+// const CONNECTION_URL =
+//   "mongodb+srv://anirban00537:anirban00537@cluster0.rsvp4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
 const PORT = process.env.PORT || 5000;
 
 mongoose

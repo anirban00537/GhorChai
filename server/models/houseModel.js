@@ -39,7 +39,6 @@ const HouseSchema = new mongoose.Schema({
   },
   homeOwner: {
     type: mongoose.Schema.Types.ObjectId,
-
     ref: "homeOwner",
   },
   status: {
@@ -51,7 +50,6 @@ const HouseSchema = new mongoose.Schema({
   },
   currentlyRenting: {
     type: mongoose.Schema.Types.ObjectId,
-
     ref: "currentlyRenting",
   },
 });

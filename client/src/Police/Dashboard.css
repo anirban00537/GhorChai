@@ -132,3 +132,55 @@
   text-align: center;
   padding-top: 10px;
 }
+
+@media screen and (max-width: 900px) {
+  .policeFirst {
+    display: flex;
+    flex-direction: column;
+  }
+  .h3Total {
+    color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .h1color {
+    color: #fff;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 29px;
+    border-radius: 50%;
+    border: 7px solid #1abc9c;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    padding-top: 20px;
+  }
+  .midCover {
+    display: none;
+  }
+  .homePoliceTitle {
+    /* color: rgb(56, 51, 73); */
+    font-size: 16px;
+    font-weight: 500;
+    color: #858585;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    width: 178px;
+  }
+  .mainpoliceText {
+    display: flex;
+    display: 0.5;
+    flex-direction: row;
+    padding-top: 77px;
+    padding-left: 20px;
+    width: 100%;
+    justify-content: center;
+    background-color: #34495e;
+    background: linear-gradient(to right, #353b48, #494369);
+    padding: 49px;
+    margin-top: 50px;
+  }
+}

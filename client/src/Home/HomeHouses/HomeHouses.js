@@ -12,12 +12,13 @@ const HomeHouses = () => {
           Quick guide
         </h5>
         <p>
-          Include jQuery first, then a Bootstrap JavaScript bundle. For more
-          information about what’s included in Bootstrap, please see ourInclude
-          jQuery first, then a Bootstrap JavaScript bundle. For more information
-          about what’s included in Bootstrap, please see ourInclude jQuery
-          first, then a Bootstrap JavaScript bundle. For more information about
-          what’s included in Bootstrap, please see our
+          This is user section where you will find different homes from
+          different place feel free to discover different house and enjoy them
+          according to your needs you can also complain different problems to
+          your owner and can have some help from your home owner, there is no
+          difficulty in this section there are chat option using which you can
+          have some conversion with your land loard you can have and estimetion
+          about your total year rendting
         </p>
       </div>
       <Homeitem />
